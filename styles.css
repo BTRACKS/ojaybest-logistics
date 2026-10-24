@@ -693,6 +693,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 }
 
 @media (max-width: 720px) {
+  .why__item > .icon-ring--sm { flex-shrink: 0; }
   .section { padding-top: 80px; }
   .quick-track { padding: 16px; }
   .quick-track__row { flex-wrap: wrap; padding: 12px; gap: 10px; border-radius: var(--radius); }
