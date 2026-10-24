@@ -130,10 +130,18 @@
     .contact-field textarea { min-height: 140px; resize: vertical; }
     .contact-field input::placeholder,
     .contact-field textarea::placeholder { color: rgba(255,255,255,0.42); }
-    .contact-field select { appearance: auto; }
+    .contact-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-opacity='0.6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 16px 16px;
+      padding-right: 44px;
+    }
     .contact-field input:focus,
     .contact-field select:focus,
-    .contact-field textarea:focus { border-color: var(--gold); background: rgba(1, 15, 39, 0.62); }
+    .contact-field textarea:focus { border-color: var(--gold); background-color: rgba(1, 15, 39, 0.62); }
     .contact-form__footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 2px; }
     .contact-form__note { color: var(--text-muted); font-size: 12px; line-height: 1.5; max-width: 390px; }
     .contact-form__msg { min-height: 20px; color: var(--gold); font-size: 13px; }
@@ -237,7 +245,7 @@
 
         <div class="contact-panel glass reveal reveal--delay">
           <h2 class="contact-panel__title">Send us a message</h2>
-          <p class="contact-panel__text">Tell us what you need and include your pickup and delivery details where relevant.</p>
+          <p class="contact-panel__text">Tell us what you need and include any details that help us serve you better.</p>
 
           <form class="contact-form" id="contactForm" novalidate>
             <div class="contact-form__row">
@@ -267,17 +275,6 @@
                   <option>Last-mile Delivery</option>
                   <option>General Enquiry</option>
                 </select>
-              </div>
-            </div>
-
-            <div class="contact-form__row">
-              <div class="contact-field">
-                <label for="contactPickup">Pickup location</label>
-                <input id="contactPickup" name="pickup" type="text" placeholder="Where should we collect from?" />
-              </div>
-              <div class="contact-field">
-                <label for="contactDelivery">Delivery location</label>
-                <input id="contactDelivery" name="delivery" type="text" placeholder="Where should we deliver to?" />
               </div>
             </div>
 
