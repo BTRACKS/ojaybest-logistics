@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms &amp; Conditions | Ojaybest Logistics</title>
+  <meta name="description" content="The terms and conditions for using Ojaybest Logistics: bookings, payments, shipments, customs, delivery, claims and refunds for our international shipping, freight forwarding and warehousing services." />
+  <meta property="og:title" content="Terms &amp; Conditions | Ojaybest Logistics" />
+  <meta property="og:description" content="How bookings, payments, shipments and complaints are handled by Ojaybest Logistics." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#021d46" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Terms & Conditions page styles (page-specific additions only; the shared design system lives in styles.css) -->
+  <style>
+    .terms-hero {
+      padding-top: 170px;
+      padding-bottom: 20px;
+      max-width: 820px;
+    }
+    /* Section label above the headline: thin gold outline, fully rounded, transparent */
+    .terms-eyebrow {
+      width: fit-content;
+      padding: 7px 18px;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    .terms-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+    }
+    .terms-hero__meta {
+      margin-top: 18px;
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+    .terms-hero__meta strong { color: var(--gold); font-weight: 600; }
+    .terms-hero__text {
+      margin-top: 22px;
+      max-width: 680px;
+      font-size: 18px;
+      color: var(--text-muted);
+    }
+
+    /* The document shares the hero's centred content width so every section
+       starts at the same left boundary as the headline and introduction. */
+    .doc {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      max-width: 820px;
+      margin-inline: auto;
+    }
+    .doc__section { margin-top: 56px; scroll-margin-top: 120px; }
+    .doc__section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .doc__section h2 .doc__num {
+      display: inline-block;
+      min-width: 44px;
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+    }
+    .doc__section p { margin-top: 14px; color: var(--text-muted); font-size: 16px; }
+    .doc__section p strong { color: var(--text); font-weight: 600; }
+    .doc__list { margin-top: 14px; display: grid; gap: 10px; }
+    .doc__list li { position: relative; padding-left: 24px; color: var(--text-muted); font-size: 16px; }
+    .doc__list li::before {
+      content: "";
+      position: absolute; left: 4px; top: 11px;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold);
+    }
+    .doc__list a { color: var(--gold); font-weight: 600; }
+    .doc__list a:hover { text-decoration: underline; }
+    .doc__note {
+      margin-top: 64px;
+      padding: 28px 30px;
+      border-radius: var(--radius);
+      border-color: rgba(250, 189, 7, 0.35);
+    }
+    .doc__note h2 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--gold); }
+    .doc__note p { margin-top: 10px; color: var(--text-muted); font-size: 16px; }
+    .doc__note a { color: var(--gold); font-weight: 600; }
+    .doc__note a:hover { text-decoration: underline; }
+
+    @media (max-width: 720px) {
+      .terms-hero { padding-top: 130px; }
+      .terms-eyebrow { font-size: 12px; padding: 6px 15px; margin-bottom: 20px; }
+      .terms-hero__text { font-size: 16px; }
+      .doc__section { margin-top: 44px; }
+      .doc__section h2 .doc__num { min-width: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient glass background -->
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb--gold"></span>
+    <span class="orb orb--blue"></span>
+    <span class="orb orb--sky"></span>
+    <span class="grid-lines"></span>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav glass" aria-label="Main navigation">
+      <a href="index.html" class="nav__brand" aria-label="Ojaybest Logistics home">
+        <img src="assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="134" height="40" />
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link">About Us</a></li>
+        <li><a href="contact.html" class="nav__link">Contact Us</a></li>
+        <li><a href="track-order.html" class="nav__link">Track Order</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="create-order.html" class="btn btn--gold btn--sm nav__cta">Create Order</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu glass" id="mobileMenu" hidden>
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About Us</a>
+      <a href="contact.html" class="mobile-menu__link">Contact Us</a>
+      <a href="track-order.html" class="mobile-menu__link">Track Order</a>
+      <a href="create-order.html" class="btn btn--gold btn--sm mobile-menu__cta">Create Order</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ INTRODUCTION ============ -->
+    <section class="terms-hero container" id="terms-intro">
+      <div class="reveal">
+        <p class="terms-eyebrow">Terms &amp; Conditions</p>
+        <h1 class="terms-hero__title">Terms &amp; Conditions</h1>
+        <p class="terms-hero__meta">
+          Last updated and effective date: <strong>24 October 2026</strong>
+        </p>
+        <p class="terms-hero__text">
+          These terms explain how bookings, payments, shipments and complaints are handled when
+          you use Ojaybest Logistics. By placing an order with us, you accept these terms.
+        </p>
+      </div>
+    </section>
+
+    <div class="doc container">
+
+      <section class="doc__section reveal" id="company-details">
+        <h2><span class="doc__num">1.</span> Company details</h2>
+        <p>
+          Ojaybest Logistics is a logistics business registered and operating from
+          <strong>Port Harcourt, Nigeria</strong>, providing international shipping, freight
+          forwarding and warehousing services to businesses and individuals.
+        </p>
+        <ul class="doc__list">
+          <li>Registered business name: Ojaybest Logistics.</li>
+          <li>Address: Port Harcourt, Nigeria.</li>
+          <li>Email: hello@ojaybestlogistics.com.</li>
+          <li>Phone: +234 800 000 0000.</li>
+          <li>Effective date of these terms: 24 October 2026.</li>
+        </ul>
+      </section>
+
+      <section class="doc__section reveal" id="services-covered">
+        <h2><span class="doc__num">2.</span> Services covered</h2>
+        <p>
+          These terms apply to the services you confirm with us, which may include international
+          shipping (air and sea freight), freight forwarding, warehousing solutions, and
+          last-mile delivery for parcels, cargo and inventory.
+        </p>
+        <p>
+          Where part of a journey is handled by a third-party carrier, airline, shipping line,
+          customs agent or warehouse partner, we arrange that leg on your behalf. Those providers
+          apply their own operating rules, and we remain your single point of contact for the
+          service you booked.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="orders-and-bookings">
+        <h2><span class="doc__num">3.</span> Orders and bookings</h2>
+        <p>
+          You can place an order through our website, by phone, by email or on WhatsApp. A
+          booking becomes <strong>confirmed</strong> once we have your shipment details and
+          written or spoken confirmation of the quoted price, and payment has been made or
+          agreed for the leg of the journey being booked.
+        </p>
+        <p>
+          To request a change to a confirmed booking, contact us as early as possible. We will
+          always try to accommodate changes, but some changes (for example, after collection or
+          after documents have been lodged with a carrier) may attract additional costs charged
+          at cost.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="customer-responsibilities">
+        <h2><span class="doc__num">4.</span> Customer responsibilities</h2>
+        <p>You agree to provide, and are responsible for, the following:</p>
+        <ul class="doc__list">
+          <li>Accurate sender and recipient names, phone numbers and delivery addresses.</li>
+          <li>Honest and complete descriptions of every item, including quantities and declared values.</li>
+          <li>Any documents required for your shipment, such as invoices, permits or identification needed for customs.</li>
+          <li>Being reachable on the contact details you gave us while your shipment is in transit.</li>
+        </ul>
+        <p>
+          We rely on the information you provide when quoting, routing and clearing your
+          shipment. We are not responsible for delays, extra charges or losses caused by
+          inaccurate, incomplete or false information.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="packaging">
+        <h2><span class="doc__num">5.</span> Packaging</h2>
+        <p>
+          Unless we agree otherwise in writing, packaging is the customer's responsibility, and
+          goods must be packed to survive the journey by road, air or sea. We can advise on, or
+          arrange, suitable packaging on request.
+        </p>
+        <p>
+          Fragile, perishable and high-value goods must be declared before booking so that we
+          can agree suitable protective packaging and handling arrangements in advance.
+          Undeclared fragile or valuable items travel at the owner's risk to the extent our
+          standard packaging and handling cannot reasonably protect them.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="prohibited-items">
+        <h2><span class="doc__num">6.</span> Prohibited and restricted items</h2>
+        <p>We do not accept shipments containing:</p>
+        <ul class="doc__list">
+          <li>Illegal or controlled substances, counterfeit goods, or weapons and ammunition.</li>
+          <li>Explosives, flammables and other dangerous goods that are not properly declared and documented.</li>
+          <li>Live animals, human remains, and currency or negotiable instruments where prohibited by the carrier.</li>
+          <li>Any item whose carriage would break Nigerian law or the law of any country on the route.</li>
+        </ul>
+        <p>
+          Some items, such as electronics, pharmaceuticals, cosmetics, foodstuffs and
+          high-value goods, are restricted: they require advance approval and special
+          documentation. Always check with us before booking; if a prohibited item is found, the
+          shipment may be stopped, returned or reported to the authorities, and any resulting
+          costs are the customer's responsibility.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="pricing-and-payment">
+        <h2><span class="doc__num">7.</span> Pricing and payment</h2>
+        <p>
+          Charges are based on the service, route, weight or volume (whichever applies,
+          including dimensional weight), declared value, and any extras you request such as
+          packaging, storage or insurance. Quotes are given before booking and are valid for the
+          period stated on the quote (usually 7 days) unless fuel, exchange-rate or carrier
+          price changes apply in the meantime.
+        </p>
+        <p>
+          Payment is due by the deadline shown on your invoice, and in most cases before
+          dispatch. We may hold a shipment until payment clears. If a third party (for example
+          an airline, customs agent or storage provider) charges us extra after booking, we will
+          explain the reason and pass the cost on at cost. We do not add hidden fees.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="customs-and-duties">
+        <h2><span class="doc__num">8.</span> Customs and duties</h2>
+        <p>
+          The customer is responsible for supplying accurate customs documents (commercial
+          invoices, packing lists, permits and any other paperwork the destination requires)
+          and for paying import duties, taxes and clearance charges. We can prepare and lodge
+          documents on your behalf as part of our freight forwarding service.
+        </p>
+        <p>
+          Delays, inspections, seizures or extra charges caused by incomplete documents,
+          undervaluation or prohibited contents are the customer's responsibility. Where a
+          shipment is inspected by customs, any inspection or demurrage costs that apply are
+          passed on at cost.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="delivery-and-tracking">
+        <h2><span class="doc__num">9.</span> Delivery and tracking</h2>
+        <p>
+          We give estimated delivery times when you book, and we work hard to keep them.
+          Estimates are not guarantees: weather, customs, carrier schedules, strikes and other
+          events outside our control can cause delays. When a delay happens, we will tell you
+          as soon as we know and keep you updated.
+        </p>
+        <p>
+          You can follow your shipment with your tracking code on our Track Order page, and our
+          team can give updates by phone, WhatsApp or email. A delivery is confirmed when the
+          recipient (or an authorised person at the address) signs for the package, or when we
+          record proof of delivery such as a photo or digital acknowledgement.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="failed-delivery">
+        <h2><span class="doc__num">10.</span> Failed delivery and storage</h2>
+        <p>
+          If the recipient is unavailable or refuses delivery, we will attempt contact using the
+          details provided and hold the shipment for collection or redelivery. If an address is
+          incorrect or incomplete and the shipment cannot be delivered, we will contact you to
+          confirm the right address before attempting again.
+        </p>
+        <p>
+          Goods left uncollected after we have made reasonable attempts to reach you may attract
+          reasonable storage charges after the first 7 days, and after 30 days without
+          arrangement we may return the goods or dispose of them, with any unpaid charges
+          deducted from the value of the goods. We will always try to agree a plan with you
+          before taking either step.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="cancellations-and-refunds">
+        <h2><span class="doc__num">11.</span> Cancellations and refunds</h2>
+        <p>
+          You can cancel a booking at any time by contacting us. Where nothing has been spent on
+          your behalf (no collection, no documents lodged, no space booked with a carrier), you
+          receive a full refund. Once work has started, we deduct the actual costs already
+          incurred (collection, documentation, carrier fees, storage) and refund the balance.
+        </p>
+        <p>
+          Refund requests are handled through our customer channels, and refunds are processed
+          to the original payment method within 14 working days of the cancellation being
+          agreed. This does not affect any cancellation or refund rights you have under Nigerian
+          consumer law.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="loss-damage-and-claims">
+        <h2><span class="doc__num">12.</span> Loss, damage and claims</h2>
+        <p>
+          If a shipment is lost or arrives damaged, tell us as soon as you discover it. Please
+          report the problem within <strong>7 days of delivery</strong> (or within 21 days if the
+          shipment is missing), and support your claim with:
+        </p>
+        <ul class="doc__list">
+          <li>Your tracking code and booking details.</li>
+          <li>Photos of the packaging and the goods.</li>
+          <li>The invoice, receipt or other evidence of the items' value.</li>
+        </ul>
+        <p>
+          We investigate every claim and assess compensation against the declared value of the
+          affected items and the cover that applies to your booking. Claims made after the
+          reporting window, or for items not declared at booking, may not be payable. We will
+          explain our findings and any settlement in writing.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="insurance-and-liability">
+        <h2><span class="doc__num">13.</span> Insurance and liability</h2>
+        <p>
+          Every shipment includes our standard care and handling. Additional insurance against
+          loss or damage is available on request. Tell us the declared value at booking and we
+          will quote the premium. Insurance does not cover inadequate packaging, prohibited
+          items, or consequential losses such as lost profits.
+        </p>
+        <p>
+          Our responsibility for any shipment is limited to the value of the goods as declared
+          (or, where no value was declared, a reasonable amount reflecting the service paid
+          for), and does not cover delays or losses caused by events outside our reasonable
+          control, by inaccurate customer information, or by customs decisions. These limits
+          apply to the fullest extent permitted by law and do not reduce any rights you have
+          that cannot lawfully be limited.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="privacy">
+        <h2><span class="doc__num">14.</span> Privacy</h2>
+        <p>
+          We collect and use your information only to quote, book, move and track your
+          shipments, and to keep you informed. How we handle customer information is described
+          in full in our separate <a href="privacy-policy.html">Privacy Policy</a>, which forms
+          part of these terms.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="complaints-and-disputes">
+        <h2><span class="doc__num">15.</span> Complaints and disputes</h2>
+        <p>
+          If something goes wrong, contact us first by email at hello@ojaybestlogistics.com,
+          by phone on +234 800 000 0000, on WhatsApp, or through our
+          <a href="contact.html">Contact Us page</a>. Tell us what happened and include your
+          tracking code.
+        </p>
+        <p>
+          We acknowledge complaints within 2 working days, investigate, and give you our
+          findings and proposed remedy in writing, normally within 10 working days. If we
+          cannot resolve a dispute between us, Nigerian law applies to these terms and either
+          party may take the matter to the courts or consumer-protection bodies of Nigeria.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="changes-to-terms">
+        <h2><span class="doc__num">16.</span> Changes to the terms</h2>
+        <p>
+          We may update these terms from time to time. The current version is always published
+          on this page, and we will announce significant changes on our website and, where we
+          have your contact details, by email or WhatsApp.
+        </p>
+        <p>
+          A booking is governed by the version of these terms in force on the date the booking
+          was confirmed, unless you and we agree in writing that a newer version applies.
+        </p>
+      </section>
+
+      <section class="doc__section reveal" id="contact">
+        <h2><span class="doc__num">17.</span> Contact</h2>
+        <p>
+          Questions about these terms, a booking, or a claim can be sent any time to
+          <strong>hello@ojaybestlogistics.com</strong> or <strong>+234 800 000 0000</strong>,
+          or through the form on our <a href="contact.html" style="color:var(--gold);font-weight:600;">Contact Us page</a>.
+          We are happy to walk through anything here in plain language before you book.
+        </p>
+      </section>
+
+      <aside class="doc__note glass reveal">
+        <h2>Before you publish</h2>
+        <p>
+          This page is a working draft. Refund rules, insurance options, claims deadlines,
+          storage charges and liability limits should be confirmed against how Ojaybest
+          Logistics actually operates, and the final wording reviewed by a legal professional
+          before publication. Send your confirmed policies and we will fold them in.
+        </p>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top glass">
+        <div class="footer__brand">
+          <img src="assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="160" height="48" loading="lazy" />
+          <p>World-class logistics for local businesses. Shipping, freight forwarding, warehousing and last-mile delivery you can trust.</p>
+          <div class="socials">
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Services</h4>
+          <a href="create-order.html">Create Order</a>
+          <a href="track-order.html">Track Order</a>
+          <a href="index.html#services">Freight Forwarding</a>
+          <a href="index.html#services">Warehousing</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+
+        <div class="footer__col footer__contact">
+          <h4>Get in touch</h4>
+          <p><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> +234 800 000 0000</p>
+          <p><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> hello@ojaybestlogistics.com</p>
+          <p><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Port Harcourt, Nigeria</p>
+
+          <form class="newsletter" id="newsletterForm" novalidate>
+            <label for="newsletterEmail" class="sr-only">Email address</label>
+            <input id="newsletterEmail" type="email" placeholder="Your email for updates" />
+            <button type="submit" class="btn btn--gold btn--sm">Subscribe</button>
+          </form>
+          <p class="newsletter__msg" id="newsletterMsg" role="status"></p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> Ojaybest Logistics. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Terms page interactions (nav, mobile menu, reveal-on-scroll, newsletter, year) -->
+  <script>
+    (function () {
+      "use strict";
+      var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
+      var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+
+      /* Sticky glass navigation */
+      var header = $("#siteHeader");
+      var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 24); };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      /* Mobile menu */
+      var toggle = $("#navToggle");
+      var mobileMenu = $("#mobileMenu");
+      var setMenu = function (open) {
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        mobileMenu.hidden = !open;
+        if (open) header.classList.add("is-scrolled");
+        else onScroll();
+      };
+      toggle.addEventListener("click", function () { setMenu(mobileMenu.hidden); });
+      $$(".mobile-menu a").forEach(function (a) {
+        a.addEventListener("click", function () { setMenu(false); });
+      });
+      window.addEventListener("resize", function () { if (window.innerWidth > 1024) setMenu(false); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+      /* Reveal on scroll */
+      var revealEls = $$(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+      }
+
+      /* Toast + newsletter */
+      var toast = $("#toast");
+      var toastTimer;
+      var showToast = function (msg) {
+        toast.textContent = msg;
+        toast.classList.add("is-visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove("is-visible"); }, 3200);
+      };
+
+      var newsletterForm = $("#newsletterForm");
+      var newsletterEmail = $("#newsletterEmail");
+      var newsletterMsg = $("#newsletterMsg");
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = newsletterEmail.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          newsletterMsg.textContent = "Please enter a valid email address.";
+          return;
+        }
+        newsletterMsg.textContent = "";
+        newsletterEmail.value = "";
+        showToast("Thanks! You're subscribed to Ojaybest updates.");
+      });
+
+      /* Footer year */
+      $("#year").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

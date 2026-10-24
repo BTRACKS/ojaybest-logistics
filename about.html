@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Ojaybest Logistics</title>
+  <meta name="description" content="Ojaybest Logistics moves parcels, cargo and inventory for local businesses across Nigeria and around the world: international shipping, freight forwarding, warehousing and last-mile delivery." />
+  <meta property="og:title" content="About Us | Ojaybest Logistics" />
+  <meta property="og:description" content="World-class logistics for local businesses: international shipping, freight forwarding, warehousing and secure last-mile delivery you can trust." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#021d46" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- About Us page styles (page-specific additions only; the shared design system lives in styles.css) -->
+  <style>
+    .about-hero {
+      padding-top: 170px;
+      padding-bottom: 40px;
+      max-width: 820px;
+    }
+    /* Section label above the headline: thin gold outline, fully rounded, transparent */
+    .about-eyebrow {
+      width: fit-content;
+      padding: 7px 18px;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    @media (max-width: 720px) {
+      .about-eyebrow { font-size: 12px; padding: 6px 15px; margin-bottom: 20px; }
+    }
+    .about-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5.4vw, 72px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+    .about-hero__text {
+      margin-top: 24px;
+      max-width: 620px;
+      font-size: 18px;
+      color: var(--text-muted);
+    }
+    @media (max-width: 720px) {
+      .about-hero { padding-top: 130px; }
+      .about-hero__text { font-size: 16px; }
+    }
+
+    /* Who We Are list: keep the icon badges perfectly circular, never squeezed oval */
+    .faq__list .icon-ring {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      margin: 0;
+    }
+    .faq__list .icon-ring svg { width: 20px; height: 20px; }
+
+    .services--three { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 1180px) { .services--three { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 960px) { .services--three { grid-template-columns: 1fr; } }
+
+    .commit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .commit__card {
+      display: flex; flex-direction: column; gap: 16px;
+      padding: 32px 28px;
+      border-radius: var(--radius-lg);
+      transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), background 0.4s var(--ease);
+    }
+    .commit__card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(250, 189, 7, 0.45);
+      background: var(--glass-bg-strong);
+    }
+    .commit__title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-top: 4px; }
+    .commit__text { color: var(--text-muted); font-size: 15px; }
+    @media (max-width: 1024px) { .commit { grid-template-columns: 1fr; } }
+    @media (min-width: 721px) and (max-width: 1024px) { .commit { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 720px) { .commit { grid-template-columns: 1fr; } }
+
+    .about-cta { max-width: 860px; margin-inline: auto; }
+    .about-cta .cta {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 40px;
+      gap: 26px;
+    }
+    .about-cta .cta__text { max-width: 480px; margin-inline: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient glass background -->
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb--gold"></span>
+    <span class="orb orb--blue"></span>
+    <span class="orb orb--sky"></span>
+    <span class="grid-lines"></span>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav glass" aria-label="Main navigation">
+      <a href="index.html" class="nav__brand" aria-label="Ojaybest Logistics home">
+        <img src="assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="134" height="40" />
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="about.html" class="nav__link is-active" aria-current="page">About Us</a></li>
+        <li><a href="contact.html" class="nav__link">Contact Us</a></li>
+        <li><a href="track-order.html" class="nav__link">Track Order</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="create-order.html" class="btn btn--gold btn--sm nav__cta">Create Order</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu glass" id="mobileMenu" hidden>
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link is-active">About Us</a>
+      <a href="contact.html" class="mobile-menu__link">Contact Us</a>
+      <a href="track-order.html" class="mobile-menu__link">Track Order</a>
+      <a href="create-order.html" class="btn btn--gold btn--sm mobile-menu__cta">Create Order</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ INTRODUCTION ============ -->
+    <section class="about-hero container" id="about-intro">
+      <div class="reveal">
+        <p class="about-eyebrow" id="about-eyebrow">About Us</p>
+        <h1 class="about-hero__title">
+          Your local business needs
+          <span class="text-gold">world-class logistics.</span>
+        </h1>
+        <p class="about-hero__text">
+          That is exactly what we built Ojaybest Logistics to deliver: one partner for every
+          step of your supply chain, whether you ship one parcel or a full container.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ WHO WE ARE ============ -->
+    <section class="section container" id="who-we-are">
+      <div class="faq">
+        <div class="faq__intro reveal">
+          <h2 class="section__title">Who <span class="text-gold">we are</span></h2>
+          <p class="section__text">
+            Ojaybest Logistics moves your parcels, cargo and inventory across Nigeria and around
+            the world. From the first mile to the last, we handle shipping, freight forwarding,
+            warehousing and delivery for growing businesses, safely, on time and fully tracked,
+            so your reputation travels with every package.
+          </p>
+        </div>
+
+        <ul class="faq__list reveal reveal--delay">
+          <li class="why__item glass">
+            <span class="icon-ring icon-ring--sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+            <div><h3>Every step of your supply chain</h3><p>One partner for international shipping, freight forwarding, warehousing and last-mile delivery.</p></div>
+          </li>
+          <li class="why__item glass">
+            <span class="icon-ring icon-ring--sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><h3>Built for growing businesses</h3><p>Whether you ship one parcel or a full container, you get the same careful handling and clear pricing.</p></div>
+          </li>
+          <li class="why__item glass">
+            <span class="icon-ring icon-ring--sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+            <div><h3>Real people, real support</h3><p>Talk to our team any time by phone, WhatsApp or email; we keep you informed at every checkpoint.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ OUR SERVICES ============ -->
+    <section class="section container" id="about-services">
+      <div class="section__head reveal">
+        <h2 class="section__title">Our <span class="text-gold">services</span></h2>
+        <p class="section__text">World-class logistics, delivered end to end for local businesses.</p>
+      </div>
+
+      <div class="services services--three reveal">
+        <article class="service glass">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </span>
+          <h3 class="service__title">International Shipping</h3>
+          <p class="service__text">Air and sea freight to and from over 200 destinations, with customs handled for you.</p>
+          <a href="create-order.html" class="service__link">Ship abroad <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="service glass">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M1 6h13v10H1z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg>
+          </span>
+          <h3 class="service__title">Freight Forwarding</h3>
+          <p class="service__text">Full and part truckloads moved between cities on scheduled, insured routes.</p>
+          <a href="create-order.html" class="service__link">Move cargo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="service glass">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8"/><path d="M7 17h10"/></svg>
+          </span>
+          <h3 class="service__title">Warehousing Solutions</h3>
+          <p class="service__text">Secure storage, inventory management and pick-and-pack for your online store.</p>
+          <a href="contact.html" class="service__link">Store with us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ OUR COMMITMENT ============ -->
+    <section class="section container" id="our-commitment">
+      <div class="section__head reveal">
+        <h2 class="section__title">Our <span class="text-gold">commitment</span></h2>
+        <p class="section__text">We treat every package like it is our own, because your reputation travels with it.</p>
+      </div>
+
+      <div class="commit reveal">
+        <article class="commit__card glass">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="commit__title">Secure handling</h3>
+          <p class="commit__text">Every package is insured, sealed and tracked in real time until it is signed for.</p>
+        </article>
+
+        <article class="commit__card glass">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <h3 class="commit__title">Reliable service</h3>
+          <p class="commit__text">Scheduled routes and smart dispatch keep deliveries on promise, on time, every time.</p>
+        </article>
+
+        <article class="commit__card glass">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h3 class="commit__title">Clear communication</h3>
+          <p class="commit__text">Clear quotes upfront with no hidden fees, and tracking updates from pickup to proof of delivery.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CALL TO ACTION ============ -->
+    <section class="section container">
+      <div class="about-cta reveal">
+        <div class="cta glass">
+          <div class="cta__glow" aria-hidden="true"></div>
+          <div class="cta__content">
+            <h2 class="cta__title">Trust us to <span class="text-gold">get you there</span></h2>
+            <p class="cta__text">Create your order in under two minutes and let us handle the rest.</p>
+          </div>
+          <div class="cta__actions">
+            <a href="create-order.html" class="btn btn--gold btn--lg">Create Order</a>
+            <a href="contact.html" class="btn btn--glass btn--lg">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top glass">
+        <div class="footer__brand">
+          <img src="assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="160" height="48" loading="lazy" />
+          <p>World-class logistics for local businesses. Shipping, freight forwarding, warehousing and last-mile delivery you can trust.</p>
+          <div class="socials">
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Services</h4>
+          <a href="create-order.html">Create Order</a>
+          <a href="track-order.html">Track Order</a>
+          <a href="index.html#services">Freight Forwarding</a>
+          <a href="index.html#services">Warehousing</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+
+        <div class="footer__col footer__contact">
+          <h4>Get in touch</h4>
+          <p><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> +234 800 000 0000</p>
+          <p><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> hello@ojaybestlogistics.com</p>
+          <p><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Port Harcourt, Nigeria</p>
+
+          <form class="newsletter" id="newsletterForm" novalidate>
+            <label for="newsletterEmail" class="sr-only">Email address</label>
+            <input id="newsletterEmail" type="email" placeholder="Your email for updates" />
+            <button type="submit" class="btn btn--gold btn--sm">Subscribe</button>
+          </form>
+          <p class="newsletter__msg" id="newsletterMsg" role="status"></p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> Ojaybest Logistics. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- About Us page interactions (nav, mobile menu, reveal-on-scroll, newsletter, year) -->
+  <script>
+    (function () {
+      "use strict";
+      var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
+      var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+
+      /* Sticky glass navigation */
+      var header = $("#siteHeader");
+      var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 24); };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      /* Mobile menu */
+      var toggle = $("#navToggle");
+      var mobileMenu = $("#mobileMenu");
+      var setMenu = function (open) {
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        mobileMenu.hidden = !open;
+        if (open) header.classList.add("is-scrolled");
+        else onScroll();
+      };
+      toggle.addEventListener("click", function () { setMenu(mobileMenu.hidden); });
+      $$(".mobile-menu a").forEach(function (a) {
+        a.addEventListener("click", function () { setMenu(false); });
+      });
+      window.addEventListener("resize", function () { if (window.innerWidth > 1024) setMenu(false); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+      /* Reveal on scroll */
+      var revealEls = $$(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+      }
+
+      /* Toast + newsletter */
+      var toast = $("#toast");
+      var toastTimer;
+      var showToast = function (msg) {
+        toast.textContent = msg;
+        toast.classList.add("is-visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove("is-visible"); }, 3200);
+      };
+
+      var newsletterForm = $("#newsletterForm");
+      var newsletterEmail = $("#newsletterEmail");
+      var newsletterMsg = $("#newsletterMsg");
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = newsletterEmail.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          newsletterMsg.textContent = "Please enter a valid email address.";
+          return;
+        }
+        newsletterMsg.textContent = "";
+        newsletterEmail.value = "";
+        showToast("Thanks! You're subscribed to Ojaybest updates.");
+      });
+
+      /* Footer year */
+      $("#year").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

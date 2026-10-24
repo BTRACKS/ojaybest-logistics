@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ojaybest Logistics | Trusted Shipping, Freight &amp; Delivery in Nigeria</title>
+  <meta name="description" content="Ojaybest Logistics delivers world-class shipping, freight forwarding, warehousing and last-mile delivery for local businesses. Create an order or track your shipment in seconds." />
+  <meta property="og:title" content="Ojaybest Logistics | Trust us to get you there" />
+  <meta property="og:description" content="International shipping, freight forwarding, warehousing and secure last-mile delivery for growing businesses." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#021d46" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Ambient glass background -->
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb--gold"></span>
+    <span class="orb orb--blue"></span>
+    <span class="orb orb--sky"></span>
+    <span class="grid-lines"></span>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav glass" aria-label="Main navigation">
+      <a href="index.html" class="nav__brand" aria-label="Ojaybest Logistics home">
+        <img src="assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="134" height="40" />
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link is-active" aria-current="page">Home</a></li>
+        <li><a href="about.html" class="nav__link">About Us</a></li>
+        <li><a href="contact.html" class="nav__link">Contact Us</a></li>
+        <li><a href="track-order.html" class="nav__link">Track Order</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="create-order.html" class="btn btn--gold btn--sm nav__cta">Create Order</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu glass" id="mobileMenu" hidden>
+      <a href="index.html" class="mobile-menu__link is-active">Home</a>
+      <a href="about.html" class="mobile-menu__link">About Us</a>
+      <a href="contact.html" class="mobile-menu__link">Contact Us</a>
+      <a href="track-order.html" class="mobile-menu__link">Track Order</a>
+      <a href="create-order.html" class="btn btn--gold btn--sm mobile-menu__cta">Create Order</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero container" id="home">
+      <div class="hero__content reveal">
+        <p class="hero__lead">Your local business needs world-class logistics</p>
+        <h1 class="hero__title">
+          Trust us<br />
+          <span class="text-gold">to get you there</span>
+        </h1>
+        <p class="hero__text">
+          From the first mile to the last, Ojaybest Logistics moves your parcels, cargo and
+          inventory across Nigeria and around the world, safely, on time and fully tracked.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="create-order.html" class="btn btn--gold btn--lg">
+            Create an order
+            <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="track-order.html" class="btn btn--glass btn--lg">Track a shipment</a>
+        </div>
+
+        <form class="quick-track glass" id="quickTrackForm" novalidate>
+          <label for="quickTrackInput" class="quick-track__label">Have a tracking number?</label>
+          <div class="quick-track__row">
+            <span class="quick-track__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </span>
+            <span class="track-prefix" aria-hidden="true">OJBTR</span>
+            <input id="quickTrackInput" class="track-suffix" type="text" size="1" placeholder="Enter last 5 characters" maxlength="5" autocapitalize="characters" spellcheck="false" autocomplete="off" aria-label="Last 5 characters of your tracking number, OJBTR added automatically" />
+
+
+            <button type="submit" class="btn btn--gold btn--sm">Track</button>
+          </div>
+          <p class="quick-track__error" id="quickTrackError" role="alert"></p>
+        </form>
+      </div>
+
+      <div class="hero__visual reveal reveal--delay">
+        <div class="hero__frame glass">
+          <img src="assets/hero-courier.jpg" alt="Ojaybest courier carrying parcels outside a logistics warehouse" width="1000" height="1125" />
+        </div>
+
+        <div class="float-card float-card--shipment glass">
+          <div class="float-card__head">
+            <span class="icon-ring icon-ring--sm" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+            </span>
+            <div>
+              <p class="float-card__title">OJB-482019</p>
+              <p class="float-card__meta">Lagos &rarr; Abuja</p>
+            </div>
+          </div>
+          <div class="progress" aria-label="Shipment progress 72%">
+            <span class="progress__bar" style="--p: 72%"></span>
+          </div>
+          <p class="float-card__meta"><span class="dot"></span> In transit, arriving tomorrow</p>
+        </div>
+
+        <div class="float-card float-card--rating glass">
+          <div class="stars" aria-label="Rated 5 out of 5">
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>
+          </div>
+          <p class="float-card__title">98% on-time delivery</p>
+          <p class="float-card__meta">Across 10,000+ shipments</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="container">
+      <div class="stats glass reveal">
+        <div class="stat">
+          <p class="stat__num"><span data-count="10000">0</span>+</p>
+          <p class="stat__label">Shipments delivered</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num"><span data-count="36">0</span></p>
+          <p class="stat__label">States covered</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num"><span data-count="98">0</span>%</p>
+          <p class="stat__label">On-time rate</p>
+        </div>
+        <div class="stat">
+          <p class="stat__num">24/7</p>
+          <p class="stat__label">Customer support</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section container" id="services">
+      <div class="section__head reveal">
+        <h2 class="section__title">Logistics built for <span class="text-gold">growing businesses</span></h2>
+        <p class="section__text">One partner for every step of your supply chain, whether you ship one parcel or a full container.</p>
+      </div>
+
+      <div class="services">
+        <article class="service glass reveal">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </span>
+          <h3 class="service__title">International Shipping</h3>
+          <p class="service__text">Air and sea freight to and from over 200 destinations, with customs handled for you.</p>
+          <a href="create-order.html" class="service__link">Ship abroad <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="service glass reveal">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M1 6h13v10H1z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg>
+          </span>
+          <h3 class="service__title">Freight Forwarding</h3>
+          <p class="service__text">Full and part truckloads moved between cities on scheduled, insured routes.</p>
+          <a href="create-order.html" class="service__link">Move cargo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="service glass reveal">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8"/><path d="M7 17h10"/></svg>
+          </span>
+          <h3 class="service__title">Warehousing Solutions</h3>
+          <p class="service__text">Secure storage, inventory management and pick-and-pack for your online store.</p>
+          <a href="contact.html" class="service__link">Store with us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+
+        <article class="service glass reveal">
+          <span class="icon-ring" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3 class="service__title">Secure &amp; Reliable</h3>
+          <p class="service__text">Every package is insured, sealed and tracked in real time until it is signed for.</p>
+          <a href="track-order.html" class="service__link">Track now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SHOWCASE ============ -->
+    <section class="section container">
+      <div class="showcase">
+        <figure class="showcase__card showcase__card--tall glass reveal">
+          <img src="assets/air-freight.jpg" alt="Cargo aircraft being loaded with freight at night" loading="lazy" width="1100" height="825" />
+          <figcaption class="showcase__caption glass">
+            <h3>Air Freight</h3>
+            <p>Express international cargo, cleared and delivered door to door.</p>
+          </figcaption>
+        </figure>
+        <figure class="showcase__card glass reveal">
+          <img src="assets/warehouse.jpg" alt="Organised Ojaybest warehouse with stacked parcels and forklift" loading="lazy" width="1100" height="825" />
+          <figcaption class="showcase__caption glass">
+            <h3>Warehousing</h3>
+            <p>Climate-safe storage with daily stock reports.</p>
+          </figcaption>
+        </figure>
+        <figure class="showcase__card glass reveal">
+          <img src="assets/last-mile.jpg" alt="Delivery van driving through the city at sunset" loading="lazy" width="1100" height="825" />
+          <figcaption class="showcase__caption glass">
+            <h3>Last-mile Delivery</h3>
+            <p>Same-day and next-day delivery within major cities.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section container" id="how-it-works">
+      <div class="section__head reveal">
+        <h2 class="section__title">Ship in <span class="text-gold">four simple steps</span></h2>
+        <p class="section__text">No paperwork headaches. Book online and we take it from there.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step glass reveal">
+          <span class="step__num">01</span>
+          <h3 class="step__title">Create your order</h3>
+          <p class="step__text">Enter pickup and delivery details, package size and get an instant quote.</p>
+        </li>
+        <li class="step glass reveal">
+          <span class="step__num">02</span>
+          <h3 class="step__title">We pick it up</h3>
+          <p class="step__text">A verified Ojaybest rider collects your package from your door.</p>
+        </li>
+        <li class="step glass reveal">
+          <span class="step__num">03</span>
+          <h3 class="step__title">Track in real time</h3>
+          <p class="step__text">Follow every checkpoint with your tracking number and SMS alerts.</p>
+        </li>
+        <li class="step glass reveal">
+          <span class="step__num">04</span>
+          <h3 class="step__title">Delivered safely</h3>
+          <p class="step__text">Your customer signs for it and you get proof of delivery instantly.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ TRACK ============ -->
+    <section class="section container" id="track">
+      <div class="track glass reveal">
+        <div class="track__intro">
+          <h2 class="section__title">Where is my <span class="text-gold">package?</span></h2>
+          <p class="section__text">Enter your tracking number to see the latest status of your shipment.</p>
+
+          <form class="track__form" id="trackForm" novalidate>
+            <label for="trackInput" class="sr-only">Last 5 characters of your tracking number, OJBTR added automatically</label>
+            <div class="track__field">
+              <span class="track-prefix" aria-hidden="true">OJBTR</span>
+              <input id="trackInput" class="track-suffix" type="text" size="1" placeholder="Enter last 5 characters" maxlength="5" autocapitalize="characters" spellcheck="false" autocomplete="off" />
+
+            </div>
+
+            <button type="submit" class="btn btn--gold">Track shipment</button>
+          </form>
+          <p class="track__error" id="trackError" role="alert"></p>
+          <p class="track__note">This is a preview. Live tracking will connect once the Track Order page is built.</p>
+        </div>
+
+        <div class="track__result" id="trackResult" aria-live="polite">
+          <div class="track__empty">
+            <span class="icon-ring icon-ring--lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <p>Your shipment journey will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section container">
+      <div class="why">
+        <div class="why__media glass reveal">
+          <img src="assets/warehouse.jpg" alt="Ojaybest warehouse operations" loading="lazy" width="1100" height="825" />
+        </div>
+        <div class="why__content reveal reveal--delay">
+          <h2 class="section__title">Why businesses <span class="text-gold">choose Ojaybest</span></h2>
+          <p class="section__text">We treat every package like it is our own, because your reputation travels with it.</p>
+
+          <ul class="why__list">
+            <li class="why__item glass">
+              <span class="icon-ring icon-ring--sm" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <div><h3>On-time, every time</h3><p>Scheduled routes and smart dispatch keep deliveries on promise.</p></div>
+            </li>
+            <li class="why__item glass">
+              <span class="icon-ring icon-ring--sm" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span>
+              <div><h3>Transparent pricing</h3><p>Clear quotes upfront with no hidden fees at delivery.</p></div>
+            </li>
+            <li class="why__item glass">
+              <span class="icon-ring icon-ring--sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+              <div><h3>Real people, real support</h3><p>Talk to our team any time by phone, WhatsApp or email.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section container" id="reviews">
+      <div class="section__head section__head--row reveal">
+        <div>
+          <h2 class="section__title">What our <span class="text-gold">customers say</span></h2>
+          <p class="section__text">Trusted by online stores, SMEs and families across Nigeria.</p>
+        </div>
+        <div class="slider-controls">
+          <button class="round-btn glass" id="prevReview" aria-label="Previous review">
+            <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="round-btn glass" id="nextReview" aria-label="Next review">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="reviews" id="reviewsTrack">
+        <article class="review glass">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></div>
+          <p class="review__text">"My fashion store ships to 20 states every week. Ojaybest has never missed a delivery and my customers love the tracking updates."</p>
+          <div class="review__author"><span class="avatar">AO</span><div><p class="review__name">Adaeze Okafor</p><p class="review__role">Founder, Ada's Closet</p></div></div>
+        </article>
+        <article class="review glass">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></div>
+          <p class="review__text">"We moved our entire warehouse stock from Lagos to Port Harcourt in two days. Professional team, zero damage."</p>
+          <div class="review__author"><span class="avatar">TB</span><div><p class="review__name">Tunde Bakare</p><p class="review__role">Operations Lead, FreshMart</p></div></div>
+        </article>
+        <article class="review glass">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></div>
+          <p class="review__text">"I sent a package to my brother in London and it arrived in five days. The customs process was handled completely for me."</p>
+          <div class="review__author"><span class="avatar">FI</span><div><p class="review__name">Fatima Ibrahim</p><p class="review__role">Customer, Abuja</p></div></div>
+        </article>
+        <article class="review glass">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></div>
+          <p class="review__text">"Pick-up was on time, the rider was polite and the price was exactly what was quoted online. Highly recommended."</p>
+          <div class="review__author"><span class="avatar">CE</span><div><p class="review__name">Chinedu Eze</p><p class="review__role">Owner, Gadget Hub</p></div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section container" id="faq">
+      <div class="faq">
+        <div class="faq__intro reveal">
+          <h2 class="section__title">Frequently asked <span class="text-gold">questions</span></h2>
+
+        </div>
+
+        <div class="faq__list reveal reveal--delay">
+          <div class="faq__item glass">
+            <button class="faq__q" aria-expanded="false">
+              How do I create a delivery order?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><p>Click "Create Order", fill in the pickup and delivery addresses, describe your package and confirm. You will receive a tracking number immediately.</p></div>
+          </div>
+          <div class="faq__item glass">
+            <button class="faq__q" aria-expanded="false">
+              How can I track my shipment?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><p>Enter your tracking number on the "Track Order" page or in the tracker above to see every checkpoint of your shipment.</p></div>
+          </div>
+          <div class="faq__item glass">
+            <button class="faq__q" aria-expanded="false">
+              Do you ship internationally?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><p>Yes. We ship by air and sea to over 200 destinations and handle export documentation and customs clearance for you.</p></div>
+          </div>
+          <div class="faq__item glass">
+            <button class="faq__q" aria-expanded="false">
+              Are my packages insured?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><p>Every shipment comes with standard cover. You can add extended insurance for high-value items when creating your order.</p></div>
+          </div>
+          <div class="faq__item glass">
+            <button class="faq__q" aria-expanded="false">
+              What payment methods do you accept?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__a"><p>We accept bank transfers, debit cards, and pay-on-pickup for local deliveries. Business accounts can request monthly invoicing.</p></div>
+          </div>
+        </div>
+        <div class="faq__support reveal">
+          <p class="section__text">Can't find what you are looking for? Our support team is always happy to help.</p>
+          <a href="contact.html" class="btn btn--glass">Contact support</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section container">
+      <div class="cta glass reveal">
+        <div class="cta__glow" aria-hidden="true"></div>
+        <div class="cta__content">
+          <h2 class="cta__title">Ready to ship with confidence?</h2>
+          <p class="cta__text">Create your first order in under two minutes and let us handle the rest.</p>
+        </div>
+        <div class="cta__actions">
+          <a href="create-order.html" class="btn btn--gold btn--lg">Create an order</a>
+          <a href="contact.html" class="btn btn--glass btn--lg">Talk to us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top glass">
+        <div class="footer__brand">
+          <img src="assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="160" height="48" loading="lazy" />
+          <p>World-class logistics for local businesses. Shipping, freight forwarding, warehousing and last-mile delivery you can trust.</p>
+          <div class="socials">
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+            <a href="#" class="round-btn round-btn--sm glass" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Services</h4>
+          <a href="create-order.html">Create Order</a>
+          <a href="track-order.html">Track Order</a>
+          <a href="#services">Freight Forwarding</a>
+          <a href="#services">Warehousing</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+
+        <div class="footer__col footer__contact">
+          <h4>Get in touch</h4>
+          <p><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> +234 800 000 0000</p>
+          <p><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> hello@ojaybestlogistics.com</p>
+          <p><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Port Harcourt, Nigeria</p>
+
+          <form class="newsletter" id="newsletterForm" novalidate>
+            <label for="newsletterEmail" class="sr-only">Email address</label>
+            <input id="newsletterEmail" type="email" placeholder="Your email for updates" />
+            <button type="submit" class="btn btn--gold btn--sm">Subscribe</button>
+          </form>
+          <p class="newsletter__msg" id="newsletterMsg" role="status"></p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> Ojaybest Logistics. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
