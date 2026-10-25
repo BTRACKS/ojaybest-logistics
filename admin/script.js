@@ -13,10 +13,11 @@
    7. Section: Shipment Management (Phase 3)
    8. Section: Tracking Management (Phase 4)
    9. Sections: Quotations, Customers, Enquiries and Staff (Phases 5–7)
-   10. Router: section switching and deep links
+    10. Router: section switching and deep links
 
-    Sections are registered with the hash router and share the
-    existing admin shell. Shipment records are frontend demo data.
+     Sections are registered with the hash router and share the
+     existing admin shell. Phase 8 is registered by phase8.js.
+     Shipment records are frontend demo data.
    ========================================================= */
 (function () {
   "use strict";
@@ -1547,6 +1548,7 @@
       return quote.status;
     }
     function recordActivity(message) {
+      if (typeof OJB.recordActivity === "function") OJB.recordActivity(message);
       OJB.data.dashboard.activities.unshift({ icon: "edit", text: "<strong>Admin User</strong> " + OJB.esc(message), time: "Just now" });
       OJB.data.dashboard.activities = OJB.data.dashboard.activities.slice(0, 20);
       var feed = document.getElementById("activityFeed");
