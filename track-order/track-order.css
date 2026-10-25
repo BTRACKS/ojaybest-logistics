@@ -583,15 +583,49 @@
 }
 
 /* ---------- Shared tracking results (same design as homepage) ---------- */
-.tracking-demo-flag { margin-bottom: 14px; }
-.tracking-results-wrap .track__result { max-width: 640px; }
+/* Results card spans the full tracking-section width and matches the
+   search card's radius, padding, surface and shadow, so the two read
+   as one continuous panel. Height grows naturally with the content. */
+.tracking-results-wrap .track__result {
+  max-width: none;
+  min-height: 0;
+  border-radius: 22px;
+  padding: clamp(26px, 4.5vw, 46px);
+  background: rgba(8, 35, 72, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+.tracking-demo-flag { margin: 0 0 20px; }
 .tracking-result-note {
   margin-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 16px;
+  border-top: 0;
+  padding: 0 6px;
   color: #a9bdd4;
+  font-size: 0.8rem;
+  line-height: 1.65;
 }
 .tracking-result-note strong { color: #fff; }
+
+/* Loading state uses the same container styling as the results card */
+.tracking-results-wrap .tracking-loading {
+  border-radius: 22px;
+  padding: clamp(26px, 4.5vw, 46px);
+  background: rgba(8, 35, 72, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  color: #dfe8f3;
+}
+.tracking-results-wrap .tracking-loading small { color: #aebfd4; }
+.tracking-results-wrap .tracking-loading strong { color: #fff; }
+
+/* Use the full card width: step titles left, timestamps right */
+.tracking-results-wrap .timeline__step > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.tracking-results-wrap .timeline__time { white-space: nowrap; }
 
 /* Keep results clear of the fixed header when scrolled into view */
 .tracking-results-wrap { scroll-margin-top: 110px; }

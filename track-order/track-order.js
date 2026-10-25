@@ -76,10 +76,12 @@
   function renderShipment(code) {
     const shipment = shared.shipmentFor(code);
     showResults(`
-      <div class="tracking-demo-flag">
-        <span class="result-tag">DEMONSTRATION DATA: NOT A REAL SHIPMENT</span>
+      <div class="track__result">
+        <p class="tracking-demo-flag">
+          <span class="result-tag">DEMONSTRATION DATA: NOT A REAL SHIPMENT</span>
+        </p>
+        ${shared.timelineHTML(shipment)}
       </div>
-      <div class="track__result">${shared.timelineHTML(shipment)}</div>
       <p class="result-note tracking-result-note"><strong>Website preview.</strong> This is sample information generated for demonstration only and does not correspond to a real shipment. Live shipment lookup will be enabled after Supabase integration.</p>
     `);
   }
