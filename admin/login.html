@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Sign In | Ojaybest Logistics</title>
+  <meta name="description" content="Ojaybest Logistics Administrator Portal sign in." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#021d46" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin">
+  <main class="login">
+    <section class="login__visual" aria-hidden="false">
+      <a href="../index.html" class="login__back">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg> Back to website
+      </a>
+      <div>
+        <h2>Run every shipment from <span>one command centre.</span></h2>
+        <p>Orders, shipments, tracking, quotations and customers managed by the Ojaybest team in one secure portal.</p>
+      </div>
+      <p style="font-size:13px">&copy; <span data-year></span> Ojaybest Logistics</p>
+    </section>
+
+    <section class="login__panel">
+      <div class="login__card a-glass">
+        <img class="login__logo" src="../assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="150" height="45" />
+        <span class="a-demo-badge">Frontend preview</span>
+        <h1>Administrator sign in</h1>
+        <p class="lead">Enter your staff credentials to access the portal.</p>
+
+        <div class="a-alert a-alert--info" role="note">
+          <span>Authentication isn't connected yet. This page validates input only and grants no admin access.</span>
+        </div>
+        <div class="a-alert a-alert--error" id="formError" role="alert" hidden></div>
+        <div class="a-alert a-alert--success" id="formSuccess" role="status" hidden>
+          <span>Details look valid. Sign-in will work once the backend is connected. <a href="index.html#dashboard">View dashboard preview</a></span>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="a-field" data-field="email">
+            <label for="email">Email address</label>
+            <div class="a-input-wrap">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <input class="a-input" type="email" id="email" name="email" placeholder="admin@ojaybest.com" autocomplete="username" aria-describedby="emailError" />
+            </div>
+            <p class="a-error" id="emailError"></p>
+          </div>
+
+          <div class="a-field" data-field="password">
+            <label for="password">Password</label>
+            <div class="a-input-wrap">
+              <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+              <input class="a-input a-input--pw" type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" aria-describedby="passwordError" />
+              <button type="button" class="a-eye" id="togglePw" aria-label="Show password" aria-pressed="false">
+                <svg class="eye-open" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" hidden><path d="M17.94 17.94A10.07 10.07 0 0112 19C5 19 1 12 1 12a18.5 18.5 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19M1 1l22 22"/><path d="M14.12 14.12a3 3 0 11-4.24-4.24"/></svg>
+              </button>
+            </div>
+            <p class="a-error" id="passwordError"></p>
+          </div>
+
+          <div class="login__row">
+            <label><input type="checkbox" id="remember" /> Keep me signed in</label>
+            <button type="button" class="a-link" id="forgotBtn">Forgot password?</button>
+          </div>
+
+          <button type="submit" class="a-btn a-btn--gold a-btn--block" id="submitBtn">Sign In</button>
+        </form>
+
+        <p class="login__foot">Authorised Ojaybest staff only. <a class="a-link" href="../index.html">Return to website</a></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="a-modal" id="forgotModal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle" hidden>
+    <div class="a-modal__box a-glass">
+      <h2 id="forgotTitle">Reset your password</h2>
+      <p>Enter your staff email and we'll send a reset link once email delivery is connected.</p>
+      <div class="a-alert a-alert--success" id="forgotSuccess" hidden><span>Preview only, no email was sent.</span></div>
+      <form id="forgotForm" novalidate>
+        <div class="a-field" data-field="resetEmail">
+          <label for="resetEmail">Email address</label>
+          <div class="a-input-wrap">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <input class="a-input" type="email" id="resetEmail" placeholder="admin@ojaybest.com" />
+          </div>
+          <p class="a-error" id="resetEmailError"></p>
+        </div>
+        <div class="a-modal__actions">
+          <button type="button" class="a-btn a-btn--ghost" data-close>Cancel</button>
+          <button type="submit" class="a-btn a-btn--gold">Send link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+/* Ojaybest Admin, Login (frontend preview, no authentication) */
+(function () {
+  "use strict";
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var $ = function (id) { return document.getElementById(id); };
+
+  document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+  function setError(field, errEl, msg) {
+    var wrap = document.querySelector('[data-field="' + field + '"]');
+    if (msg) { wrap.classList.add("is-invalid"); errEl.textContent = msg; }
+    else { wrap.classList.remove("is-invalid"); errEl.textContent = ""; }
+    return !msg;
+  }
+  function checkEmail(v) {
+    v = v.trim();
+    if (!v) return "Email address is required.";
+    if (v.length > 255) return "Email must be under 255 characters.";
+    if (!EMAIL_RE.test(v)) return "Enter a valid email address.";
+    return "";
+  }
+  function checkPassword(v) {
+    if (!v) return "Password is required.";
+    if (v.length < 8) return "Password must be at least 8 characters.";
+    if (v.length > 128) return "Password must be under 128 characters.";
+    return "";
+  }
+
+  // Password toggle
+  var pw = $("password"), toggle = $("togglePw");
+  toggle.addEventListener("click", function () {
+    var show = pw.type === "password";
+    pw.type = show ? "text" : "password";
+    toggle.setAttribute("aria-pressed", String(show));
+    toggle.setAttribute("aria-label", show ? "Hide password" : "Show password");
+    toggle.querySelector(".eye-open").hidden = show;
+    toggle.querySelector(".eye-closed").hidden = !show;
+  });
+
+  var email = $("email");
+  email.addEventListener("blur", function () { if (email.value) setError("email", $("emailError"), checkEmail(email.value)); });
+  email.addEventListener("input", function () { setError("email", $("emailError"), ""); });
+  pw.addEventListener("input", function () { setError("password", $("passwordError"), ""); });
+
+  $("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    $("formError").hidden = true; $("formSuccess").hidden = true;
+    var ok1 = setError("email", $("emailError"), checkEmail(email.value));
+    var ok2 = setError("password", $("passwordError"), checkPassword(pw.value));
+    if (!ok1 || !ok2) {
+      $("formError").textContent = "Please fix the highlighted fields.";
+      $("formError").hidden = false;
+      (ok1 ? pw : email).focus();
+      return;
+    }
+    var btn = $("submitBtn");
+    btn.disabled = true; btn.textContent = "Checking…";
+    setTimeout(function () {
+      btn.disabled = false; btn.textContent = "Sign In";
+      $("formSuccess").hidden = false;
+    }, 700);
+  });
+
+  // Forgot password modal
+  var modal = $("forgotModal");
+  function openModal() { modal.hidden = false; $("forgotSuccess").hidden = true; $("resetEmail").value = email.value; $("resetEmail").focus(); }
+  function closeModal() { modal.hidden = true; $("forgotBtn").focus(); }
+  $("forgotBtn").addEventListener("click", openModal);
+  modal.addEventListener("click", function (e) { if (e.target === modal || e.target.hasAttribute("data-close")) closeModal(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) closeModal(); });
+  $("forgotForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (setError("resetEmail", $("resetEmailError"), checkEmail($("resetEmail").value))) $("forgotSuccess").hidden = false;
+  });
+})();
+  </script>
+</body>
+</html>

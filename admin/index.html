@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal | Ojaybest Logistics</title>
+  <meta name="description" content="Ojaybest Logistics Administrator Portal dashboard." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#021d46" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin">
+  <div class="shell" id="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
+      <div class="sidebar__head">
+        <a href="#dashboard" aria-label="Ojaybest Admin dashboard">
+          <img class="sidebar__logo" src="../assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="130" height="39" />
+          <span class="sidebar__mark" aria-hidden="true">OB</span>
+        </a>
+        <button class="sidebar__collapse" id="collapseBtn" aria-label="Collapse sidebar" aria-expanded="true">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+      </div>
+
+      <nav class="sidebar__nav">
+        <p class="sidebar__label">Overview</p>
+        <a class="sidebar__link" data-nav="dashboard" data-tip="Dashboard" href="#dashboard">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          <span class="sidebar__text">Dashboard</span>
+        </a>
+
+        <p class="sidebar__label">Operations</p>
+        <a class="sidebar__link" data-nav="orders" data-tip="Orders" href="#orders">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg>
+          <span class="sidebar__text">Orders</span><span class="sidebar__count">12</span>
+        </a>
+        <a class="sidebar__link" data-nav="shipments" data-tip="Shipments" href="#shipments">
+          <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span class="sidebar__text">Shipments</span>
+        </a>
+        <a class="sidebar__link" data-nav="tracking" data-tip="Tracking Management" href="#tracking">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="sidebar__text">Tracking Management</span>
+        </a>
+        <a class="sidebar__link" data-nav="quotations" data-tip="Quotations" href="#quotations">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+          <span class="sidebar__text">Quotations</span>
+        </a>
+
+        <p class="sidebar__label">People</p>
+        <a class="sidebar__link" data-nav="customers" data-tip="Customers" href="#customers">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <span class="sidebar__text">Customers</span>
+        </a>
+        <a class="sidebar__link" data-nav="enquiries" data-tip="Enquiries" href="#enquiries">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <span class="sidebar__text">Enquiries</span><span class="sidebar__count">5</span>
+        </a>
+        <a class="sidebar__link" data-nav="staff" data-tip="Staff Management" href="#staff">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="sidebar__text">Staff Management</span>
+        </a>
+
+        <p class="sidebar__label">Insights</p>
+        <a class="sidebar__link" data-nav="reports" data-tip="Reports &amp; Analytics" href="#reports">
+          <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          <span class="sidebar__text">Reports &amp; Analytics</span>
+        </a>
+        <a class="sidebar__link" data-nav="notifications" data-tip="Notifications" href="#notifications">
+          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="sidebar__text">Notifications</span><span class="sidebar__count">3</span>
+        </a>
+        <a class="sidebar__link" data-nav="activity" data-tip="Activity Logs" href="#activity">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span class="sidebar__text">Activity Logs</span>
+        </a>
+        <a class="sidebar__link" data-nav="settings" data-tip="Settings" href="#settings">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <span class="sidebar__text">Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar__foot">
+        <a class="sidebar__link" data-tip="Sign out" href="login.html">
+          <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          <span class="sidebar__text">Sign out</span>
+        </a>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="topbar__menu" id="menuBtn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <label class="topbar__search">
+          <span class="a-sr">Search</span>
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" placeholder="Search orders, tracking IDs, customers…" />
+        </label>
+        <div class="topbar__actions">
+          <button class="icon-btn" aria-label="Notifications" data-go="notifications">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg><span class="dot"></span>
+          </button>
+          <div class="user-chip">
+            <span class="avatar">AD</span>
+            <div><strong>Admin User</strong><small>Demo account</small></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content" id="content">
+        <!-- ============ SECTION: Dashboard (Phase 1) ============ -->
+        <section class="view" data-view="dashboard" data-title="Dashboard">
+        <div class="demo-banner" role="note">
+          <span class="a-demo-badge">Demo data</span>
+          All figures, orders and activity below are sample data for preview purposes only.
+        </div>
+
+        <div class="page-head">
+          <div>
+            <h1>Good <span id="greet">day</span>, Admin</h1>
+            <p>Here's what's happening across Ojaybest operations today.</p>
+          </div>
+          <a href="../create-order/create-order.html" class="a-btn a-btn--gold">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> New Order
+          </a>
+        </div>
+
+        <section class="stats" aria-label="Key metrics">
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--gold"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/></svg></span><span class="stat__trend stat__trend--up">+12.4%</span></div>
+            <p class="stat__value" data-count="1284">0</p><p class="stat__label">Total Orders</p>
+          </article>
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--warn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="stat__trend stat__trend--down">+3</span></div>
+            <p class="stat__value" data-count="27">0</p><p class="stat__label">Pending Confirmations</p>
+          </article>
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--info"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="stat__trend stat__trend--up">+8.1%</span></div>
+            <p class="stat__value" id="dashboardActiveShipments" data-count="143" data-base-count="143">0</p><p class="stat__label">Active Shipments</p>
+          </article>
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span class="stat__trend stat__trend--up">+15.2%</span></div>
+            <p class="stat__value" id="dashboardDeliveredShipments" data-count="1098" data-base-count="1098">0</p><p class="stat__label">Delivered Shipments</p>
+          </article>
+        </section>
+
+        <div class="grid">
+          <div class="grid__col">
+            <section class="panel a-glass">
+              <div class="panel__head"><h2>Recent Orders</h2><a href="#orders">View all</a></div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead><tr><th>Tracking ID</th><th>Customer</th><th>Route</th><th>Service</th><th>Status</th><th>Date</th></tr></thead>
+                  <tbody id="dashOrdersBody"></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="panel a-glass">
+              <div class="panel__head"><h2>Recent Activities</h2><a href="#activity">Activity logs</a></div>
+              <ul class="feed" id="activityFeed"></ul>
+            </section>
+          </div>
+          <div class="grid__col">
+            <section class="panel a-glass">
+              <div class="panel__head"><h2>Notifications</h2><a href="#" id="markRead">Mark all read</a></div>
+              <ul class="feed" id="notifFeed"></ul>
+            </section>
+          </div>
+        </div>
+              </section>
+
+        <!-- ============ SECTION: Orders Management (Phase 2) ============ -->
+        <section class="view" id="ordersView" data-view="orders" data-title="Orders Management" hidden>
+        <div class="demo-banner" role="note">
+          <span class="a-demo-badge">Demo data</span>
+          These are sample orders. Status changes you make here are a preview only. They are not saved and do not affect real customers.
+        </div>
+
+        <div class="page-head">
+          <div>
+            <h1>Orders Management</h1>
+            <p>Review Front Desk confirmed orders and approve them for shipment.</p>
+          </div>
+        </div>
+
+        <section class="stats" aria-label="Order summary">
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--gold"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/></svg></span></div>
+            <p class="stat__value" id="sTotal">0</p><p class="stat__label">Total Orders</p>
+          </article>
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--warn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div>
+            <p class="stat__value" id="sPending">0</p><p class="stat__label">Pending Confirmations</p>
+          </article>
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--info"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span></div>
+            <p class="stat__value" id="sConfirmed">0</p><p class="stat__label">Confirmed Orders</p>
+          </article>
+          <article class="stat a-glass">
+            <div class="stat__top"><span class="stat__icon stat__icon--ok"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span></div>
+            <p class="stat__value" id="sApproved">0</p><p class="stat__label">Approved Orders</p>
+          </article>
+        </section>
+
+        <section class="panel a-glass">
+          <div class="panel__head"><h2>All Orders</h2></div>
+          <div class="chips" id="chips" role="group" aria-label="Filter by order status"></div>
+          <div class="toolbar">
+            <label class="toolbar__search">
+              <span class="a-sr">Search orders</span>
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="search" id="search" placeholder="Search by reference, customer, city…" maxlength="100" />
+            </label>
+            <label><span class="a-sr">Front Desk status</span>
+              <select class="a-select" id="fFront">
+                <option value="all">All Front Desk statuses</option>
+                <option value="awaiting">Awaiting Front Desk</option>
+                <option value="confirmed">Front Desk Confirmed</option>
+                <option value="flagged">Flagged by Front Desk</option>
+              </select>
+            </label>
+            <label><span class="a-sr">Shipping service</span>
+              <select class="a-select" id="fService"></select>
+            </label>
+            <button class="a-btn a-btn--ghost a-btn--sm" id="resetFilters">Clear filters</button>
+            <span class="toolbar__count" id="resultCount"></span>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr>
+                <th><button class="th-sort" data-sort="ref">Order Ref <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                <th><button class="th-sort" data-sort="customer">Customer <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                <th><button class="th-sort" data-sort="route">Origin → Destination <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                <th><button class="th-sort" data-sort="service">Service <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                <th><button class="th-sort" data-sort="submitted">Submitted <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                <th><button class="th-sort" data-sort="status">Order Status <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                <th>Front Desk</th>
+                <th>Actions</th>
+              </tr></thead>
+              <tbody id="ordersBody"></tbody>
+            </table>
+          </div>
+
+          <div class="pager">
+            <span id="pagerInfo"></span>
+            <div class="pager__btns" id="pagerBtns"></div>
+            <label class="pager__size">Rows
+              <select class="a-select" id="pageSize"><option>5</option><option selected>10</option><option>20</option></select>
+            </label>
+          </div>
+        </section>
+              </section>
+
+        <!-- ============ SECTION: Shipment Management (Phase 3) ============ -->
+        <section class="view" id="shipmentsView" data-view="shipments" data-title="Shipment Management" hidden>
+          <div class="demo-banner" role="note">
+            <span class="a-demo-badge">Demo data</span>
+            Shipment records and edits are temporary and reset when this page is refreshed.
+          </div>
+          <div class="page-head">
+            <div><h1>Shipment Management</h1><p>Manage shipments created from administrator-approved orders.</p></div>
+            <a href="#orders" class="a-btn a-btn--gold">View approved orders</a>
+          </div>
+          <section class="stats shipment-stats" aria-label="Shipment summary">
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--gold"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/></svg></span></div><p class="stat__value" id="shipTotal">0</p><p class="stat__label">Total Shipments</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--warn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div><p class="stat__value" id="shipAwaiting">0</p><p class="stat__label">Awaiting Dispatch</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--info"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></div><p class="stat__value" id="shipTransit">0</p><p class="stat__label">In Transit</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span></div><p class="stat__value" id="shipDelivered">0</p><p class="stat__label">Delivered</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--violet"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18.4A2 2 0 003.5 21h17a2 2 0 001.7-2.6L13.7 3.9a2 2 0 00-3.4 0z"/></svg></span></div><p class="stat__value" id="shipHold">0</p><p class="stat__label">On Hold</p></article>
+          </section>
+          <section class="panel a-glass" aria-label="Shipment records">
+            <div class="panel__head"><h2>All Shipments</h2><span class="a-demo-badge">Preview only</span></div>
+            <div class="toolbar">
+              <label class="toolbar__search"><span class="a-sr">Search shipments</span><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="search" id="shipmentSearch" placeholder="Search tracking, order, sender, receiver, route…" maxlength="120" /></label>
+              <label><span class="a-sr">Filter by shipment status</span><select class="a-select" id="shipmentStatusFilter"><option value="all">All shipment statuses</option></select></label>
+              <button class="a-btn a-btn--ghost a-btn--sm" id="shipmentReset">Clear filters</button>
+              <span class="toolbar__count" id="shipmentResultCount"></span>
+            </div>
+            <div class="table-wrap">
+              <table class="table shipment-table">
+                <thead><tr>
+                  <th><button class="th-sort" data-ship-sort="trackingNumber">Tracking Number <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-ship-sort="orderRef">Order Reference <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th>Sender and Receiver</th>
+                  <th><button class="th-sort" data-ship-sort="route">Origin and Destination <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-ship-sort="status">Shipment Status <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-ship-sort="createdAt">Date Created <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-ship-sort="expectedDelivery">Expected Delivery <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th>Actions</th>
+                </tr></thead>
+                <tbody id="shipmentsBody"></tbody>
+              </table>
+            </div>
+            <div class="pager">
+              <span id="shipmentPagerInfo"></span>
+              <div class="pager__btns" id="shipmentPagerBtns"></div>
+              <label class="pager__size">Rows <select class="a-select" id="shipmentPageSize"><option>5</option><option selected>10</option><option>20</option></select></label>
+            </div>
+          </section>
+        </section>
+
+        <!-- ============ SECTION: Tracking Management (Phase 4) ============ -->
+        <section class="view" id="trackingView" data-view="tracking" data-title="Tracking Management" hidden>
+          <div class="demo-banner" role="note">
+            <span class="a-demo-badge">Demo data</span>
+            Tracking updates are temporary, shared with Shipment Management in this session, and reset on refresh.
+          </div>
+          <div class="page-head">
+            <div><h1>Tracking Management</h1><p>Publish shipment progress and review the tracking timeline.</p></div>
+            <a href="#shipments" class="a-btn a-btn--ghost">Shipment Management</a>
+          </div>
+          <section class="stats tracking-stats" aria-label="Tracking summary">
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--gold"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/></svg></span></div><p class="stat__value" id="trackTotal">0</p><p class="stat__label">Total Tracked Shipments</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--info"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></div><p class="stat__value" id="trackTransit">0</p><p class="stat__label">In Transit</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--warn"><svg viewBox="0 0 24 24"><path d="M3 12h13M12 5l7 7-7 7M20 5v14"/></svg></span></div><p class="stat__value" id="trackOutForDelivery">0</p><p class="stat__label">Out for Delivery</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span></div><p class="stat__value" id="trackDelivered">0</p><p class="stat__label">Delivered</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--violet"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18.4A2 2 0 003.5 21h17a2 2 0 001.7-2.6L13.7 3.9a2 2 0 00-3.4 0z"/></svg></span></div><p class="stat__value" id="trackOnHold">0</p><p class="stat__label">On Hold</p></article>
+          </section>
+          <section class="panel a-glass" aria-label="Tracked shipments">
+            <div class="panel__head"><h2>Tracked Shipments</h2><span class="a-demo-badge">Shared shipment records</span></div>
+            <div class="toolbar">
+              <label class="toolbar__search"><span class="a-sr">Search tracked shipments</span><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="search" id="trackingSearch" placeholder="Search tracking, order, contact, location…" maxlength="120" /></label>
+              <label><span class="a-sr">Filter tracking status</span><select class="a-select" id="trackingStatusFilter"><option value="all">All shipment statuses</option></select></label>
+              <button class="a-btn a-btn--ghost a-btn--sm" id="trackingReset">Clear filters</button>
+              <span class="toolbar__count" id="trackingResultCount"></span>
+            </div>
+            <div class="table-wrap">
+              <table class="table tracking-table">
+                <thead><tr>
+                  <th><button class="th-sort" data-track-sort="trackingNumber">Tracking Number <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-track-sort="orderRef">Order Reference <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-track-sort="senderReceiver">Sender and Receiver <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-track-sort="route">Origin and Destination <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-track-sort="currentLocation">Current Location <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-track-sort="status">Shipment Status <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th><button class="th-sort" data-track-sort="lastUpdated">Last Updated <svg viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg></button></th>
+                  <th>Actions</th>
+                </tr></thead>
+                <tbody id="trackingBody"></tbody>
+              </table>
+            </div>
+            <div class="pager">
+              <span id="trackingPagerInfo"></span>
+              <div class="pager__btns" id="trackingPagerBtns"></div>
+              <label class="pager__size">Rows <select class="a-select" id="trackingPageSize"><option>5</option><option selected>10</option><option>20</option></select></label>
+            </div>
+          </section>
+        </section>
+
+        <!-- ============ SECTION: Quotation Management (Phase 5) ============ -->
+        <section class="view" data-view="quotations" data-title="Quotation Management" hidden>
+          <div class="demo-banner" role="note"><span class="a-demo-badge">Preview only</span> Quotation changes are held in this browser session and are not permanently saved or emailed.</div>
+          <div class="page-head"><div><h1>Quotation Management</h1><p>Review requests, prepare pricing and track customer decisions.</p></div><button class="a-btn a-btn--gold" type="button" data-quote-create>＋ New quotation</button></div>
+          <section class="stats phase-stats phase-stats--five" aria-label="Quotation summary">
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--gold">QT</span></div><p class="stat__value" id="quoteStatTotal">0</p><p class="stat__label">Total Quotations</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--warn">…</span></div><p class="stat__value" id="quoteStatPending">0</p><p class="stat__label">Pending Requests</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--info">↗</span></div><p class="stat__value" id="quoteStatSent">0</p><p class="stat__label">Quotations Sent</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--ok">✓</span></div><p class="stat__value" id="quoteStatAccepted">0</p><p class="stat__label">Accepted Quotations</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--violet">◷</span></div><p class="stat__value" id="quoteStatExpired">0</p><p class="stat__label">Expired Quotations</p></article>
+          </section>
+          <section class="panel a-glass phase-panel" aria-label="Quotation records">
+            <div class="panel__head"><h2>All Quotations</h2><span class="a-demo-badge">Shared demo records</span></div>
+            <div class="toolbar">
+              <label class="toolbar__search"><span class="a-sr">Search quotations</span><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="quoteSearch" type="search" placeholder="Search reference, customer, route…" maxlength="120"></label>
+              <label><span class="a-sr">Filter quotation status</span><select class="a-select" id="quoteStatusFilter"><option value="all">All statuses</option></select></label>
+              <label><span class="a-sr">Sort quotations</span><select class="a-select" id="quoteSort"><option value="requested-desc">Newest request</option><option value="requested-asc">Oldest request</option><option value="customer-asc">Customer A–Z</option><option value="amount-desc">Highest amount</option><option value="amount-asc">Lowest amount</option></select></label>
+              <button class="a-btn a-btn--ghost a-btn--sm" id="quoteReset" type="button">Clear filters</button><span class="toolbar__count" id="quoteCount"></span>
+            </div>
+            <div class="table-wrap"><table class="table phase-table"><thead><tr><th>Quotation Reference</th><th>Customer</th><th>Origin and Destination</th><th>Shipping Service</th><th>Date Requested</th><th>Quoted Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="quoteBody"></tbody></table></div>
+            <div class="pager"><span id="quotePagerInfo"></span><div class="pager__btns" id="quotePagerBtns"></div><label class="pager__size">Rows <select class="a-select" id="quotePageSize"><option>5</option><option selected>10</option><option>20</option></select></label></div>
+          </section>
+        </section>
+
+        <!-- ============ SECTION: Customers (Phase 6) ============ -->
+        <section class="view" data-view="customers" data-title="Customers" hidden>
+          <div class="demo-banner" role="note"><span class="a-demo-badge">Preview only</span> Customer records are grouped from shared order, shipment and quotation demo data. No customer accounts are created.</div>
+          <div class="page-head"><div><h1>Customer Management</h1><p>See each customer's orders, shipments, quotations and recent activity.</p></div></div>
+          <section class="stats phase-stats" aria-label="Customer summary">
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--gold">CU</span></div><p class="stat__value" id="customerStatTotal">0</p><p class="stat__label">Total Customers</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--info">＋</span></div><p class="stat__value" id="customerStatNew">0</p><p class="stat__label">New Customers</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--warn">↗</span></div><p class="stat__value" id="customerStatActive">0</p><p class="stat__label">Customers with Active Shipments</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--ok">↻</span></div><p class="stat__value" id="customerStatReturning">0</p><p class="stat__label">Returning Customers</p></article>
+          </section>
+          <section class="panel a-glass phase-panel" aria-label="Customer records">
+            <div class="panel__head"><h2>Customers</h2><span class="a-demo-badge">Deduplicated by email</span></div>
+            <div class="toolbar">
+              <label class="toolbar__search"><span class="a-sr">Search customers</span><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="customerSearch" type="search" placeholder="Search name, email, phone…" maxlength="120"></label>
+              <label><span class="a-sr">Filter customer group</span><select class="a-select" id="customerFilter"><option value="all">All customers</option><option value="new">New customers</option><option value="active">Active shipments</option><option value="returning">Returning customers</option></select></label>
+              <label><span class="a-sr">Sort customers</span><select class="a-select" id="customerSort"><option value="name-asc">Name A–Z</option><option value="name-desc">Name Z–A</option><option value="orders-desc">Most orders</option><option value="activity-desc">Recent activity</option></select></label>
+              <button class="a-btn a-btn--ghost a-btn--sm" id="customerReset" type="button">Clear filters</button><span class="toolbar__count" id="customerCount"></span>
+            </div>
+            <div class="table-wrap"><table class="table phase-table"><thead><tr><th>Customer Name</th><th>Email Address</th><th>Phone Number</th><th>Total Orders</th><th>Active Shipments</th><th>Last Activity</th><th>Actions</th></tr></thead><tbody id="customerBody"></tbody></table></div>
+            <div class="pager"><span id="customerPagerInfo"></span><div class="pager__btns" id="customerPagerBtns"></div><label class="pager__size">Rows <select class="a-select" id="customerPageSize"><option>5</option><option selected>10</option><option>20</option></select></label></div>
+          </section>
+        </section>
+
+        <!-- ============ SECTION: Enquiries (Phase 6) ============ -->
+        <section class="view" data-view="enquiries" data-title="Enquiries" hidden>
+          <div class="demo-banner" role="note"><span class="a-demo-badge">Preview only</span> Enquiry status and internal note changes last for this browser session. No replies are sent.</div>
+          <div class="page-head"><div><h1>Enquiry Management</h1><p>Review customer messages and keep internal follow-up notes together.</p></div></div>
+          <section class="stats phase-stats" aria-label="Enquiry summary">
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--gold">EN</span></div><p class="stat__value" id="enquiryStatTotal">0</p><p class="stat__label">Total Enquiries</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--warn">＋</span></div><p class="stat__value" id="enquiryStatNew">0</p><p class="stat__label">New Enquiries</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--info">↻</span></div><p class="stat__value" id="enquiryStatProgress">0</p><p class="stat__label">In Progress</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--ok">✓</span></div><p class="stat__value" id="enquiryStatResolved">0</p><p class="stat__label">Resolved</p></article>
+          </section>
+          <section class="panel a-glass phase-panel" aria-label="Enquiry records">
+            <div class="panel__head"><h2>Customer Enquiries</h2><span class="a-demo-badge">Contact form preview</span></div>
+            <div class="toolbar">
+              <label class="toolbar__search"><span class="a-sr">Search enquiries</span><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="enquirySearch" type="search" placeholder="Search name, email, subject…" maxlength="120"></label>
+              <label><span class="a-sr">Filter enquiry status</span><select class="a-select" id="enquiryStatusFilter"><option value="all">All statuses</option></select></label>
+              <label><span class="a-sr">Sort enquiries</span><select class="a-select" id="enquirySort"><option value="date-desc">Newest first</option><option value="date-asc">Oldest first</option><option value="name-asc">Customer A–Z</option><option value="status-asc">Status</option></select></label>
+              <button class="a-btn a-btn--ghost a-btn--sm" id="enquiryReset" type="button">Clear filters</button><span class="toolbar__count" id="enquiryCount"></span>
+            </div>
+            <div class="table-wrap"><table class="table phase-table"><thead><tr><th>Customer Name</th><th>Email Address</th><th>Subject</th><th>Date Submitted</th><th>Enquiry Status</th><th>Actions</th></tr></thead><tbody id="enquiryBody"></tbody></table></div>
+            <div class="pager"><span id="enquiryPagerInfo"></span><div class="pager__btns" id="enquiryPagerBtns"></div><label class="pager__size">Rows <select class="a-select" id="enquiryPageSize"><option>5</option><option selected>10</option><option>20</option></select></label></div>
+          </section>
+        </section>
+
+        <!-- ============ SECTION: Staff Management (Phase 7) ============ -->
+        <section class="view" data-view="staff" data-title="Staff Management" hidden>
+          <div class="demo-banner" role="note"><span class="a-demo-badge">Demo interface</span> Role labels are informational only. No authentication or permissions are enforced, and changes are not saved after refresh.</div>
+          <div class="page-head"><div><h1>Staff Management</h1><p>Review staff profiles, role assignments and recent activity.</p></div><button class="a-btn a-btn--gold" type="button" data-staff-create>＋ Add staff</button></div>
+          <section class="stats phase-stats" aria-label="Staff summary">
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--gold">ST</span></div><p class="stat__value" id="staffStatTotal">0</p><p class="stat__label">Total Staff</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--ok">✓</span></div><p class="stat__value" id="staffStatActive">0</p><p class="stat__label">Active Staff</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--warn">Ⅱ</span></div><p class="stat__value" id="staffStatInactive">0</p><p class="stat__label">Inactive Staff</p></article>
+            <article class="stat a-glass"><div class="stat__top"><span class="stat__icon stat__icon--info">FD</span></div><p class="stat__value" id="staffStatFrontDesk">0</p><p class="stat__label">Front Desk Personnel</p></article>
+          </section>
+          <section class="panel a-glass phase-panel" aria-label="Staff records">
+            <div class="panel__head"><h2>Team Members</h2><span class="a-demo-badge">Preview only</span></div>
+            <div class="toolbar">
+              <label class="toolbar__search"><span class="a-sr">Search staff</span><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="staffSearch" type="search" placeholder="Search name or email…" maxlength="120"></label>
+              <label><span class="a-sr">Filter staff role</span><select class="a-select" id="staffRoleFilter"><option value="all">All roles</option><option>Administrator</option><option>Front Desk</option></select></label>
+              <label><span class="a-sr">Filter staff status</span><select class="a-select" id="staffStatusFilter"><option value="all">All account statuses</option><option value="Active">Active</option><option value="Inactive">Inactive</option></select></label>
+              <label><span class="a-sr">Sort staff</span><select class="a-select" id="staffSort"><option value="name-asc">Name A–Z</option><option value="name-desc">Name Z–A</option><option value="date-desc">Recently added</option><option value="activity-desc">Recent activity</option></select></label>
+              <button class="a-btn a-btn--ghost a-btn--sm" id="staffReset" type="button">Clear filters</button><span class="toolbar__count" id="staffCount"></span>
+            </div>
+            <div class="table-wrap"><table class="table phase-table"><thead><tr><th>Staff Name</th><th>Email Address</th><th>Assigned Role</th><th>Account Status</th><th>Date Added</th><th>Last Activity</th><th>Actions</th></tr></thead><tbody id="staffBody"></tbody></table></div>
+            <div class="pager"><span id="staffPagerInfo"></span><div class="pager__btns" id="staffPagerBtns"></div><label class="pager__size">Rows <select class="a-select" id="staffPageSize"><option>5</option><option selected>10</option><option>20</option></select></label></div>
+            <div class="phase-role-note"><strong>Role scope preview</strong><span><b>Administrator</b> may manage orders, shipments, tracking, quotations, customer records, staff, reports and settings.</span><span><b>Front Desk</b> may create orders, review assigned orders and confirm customer details. Backend enforcement is not enabled in this demo.</span></div>
+          </section>
+        </section>
+
+        <!-- ============ SECTION: Reports &amp; Analytics (placeholder) ============ -->
+        <section class="view" data-view="reports" data-title="Reports &amp; Analytics" hidden>
+          <div class="page-head"><div><h1>Reports &amp; Analytics</h1><p>Performance reports across orders and shipments.</p></div></div>
+          <div class="panel a-glass soon-panel">
+            <h2>Coming in a later phase</h2>
+            <p>This section will appear here inside the same portal layout once it is built.</p>
+            <a href="#dashboard" class="a-btn a-btn--ghost">Back to dashboard</a>
+          </div>
+        </section>
+
+        <!-- ============ SECTION: Notifications (placeholder) ============ -->
+        <section class="view" data-view="notifications" data-title="Notifications" hidden>
+          <div class="page-head"><div><h1>Notifications</h1><p>All system alerts in one place.</p></div></div>
+          <div class="panel a-glass soon-panel">
+            <h2>Coming in a later phase</h2>
+            <p>This section will appear here inside the same portal layout once it is built.</p>
+            <a href="#dashboard" class="a-btn a-btn--ghost">Back to dashboard</a>
+          </div>
+        </section>
+
+        <!-- ============ SECTION: Activity Logs (placeholder) ============ -->
+        <section class="view" data-view="activity" data-title="Activity Logs" hidden>
+          <div class="page-head"><div><h1>Activity Logs</h1><p>A full audit trail of admin actions.</p></div></div>
+          <div class="panel a-glass soon-panel">
+            <h2>Coming in a later phase</h2>
+            <p>This section will appear here inside the same portal layout once it is built.</p>
+            <a href="#dashboard" class="a-btn a-btn--ghost">Back to dashboard</a>
+          </div>
+        </section>
+
+        <!-- ============ SECTION: Settings (placeholder) ============ -->
+        <section class="view" data-view="settings" data-title="Settings" hidden>
+          <div class="page-head"><div><h1>Settings</h1><p>Portal and company preferences.</p></div></div>
+          <div class="panel a-glass soon-panel">
+            <h2>Coming in a later phase</h2>
+            <p>This section will appear here inside the same portal layout once it is built.</p>
+            <a href="#dashboard" class="a-btn a-btn--ghost">Back to dashboard</a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ============ Shared overlays (details drawers, demo dialogs, confirmation and toast) ============ -->
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dRef" hidden>
+    <div class="drawer__scrim"></div>
+    <div class="drawer__panel">
+      <header class="drawer__head">
+        <div>
+          <h2 id="dRef"></h2>
+          <p id="dSubmitted"></p>
+          <div class="drawer__pills" id="dPills"></div>
+        </div>
+        <button class="icon-btn" id="dClose" aria-label="Close order details"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </header>
+      <div class="drawer__body" id="dBody"></div>
+      <footer class="drawer__foot" id="dFoot"></footer>
+    </div>
+  </div>
+
+  <div class="drawer" id="shipmentDrawer" role="dialog" aria-modal="true" aria-labelledby="shipmentDrawerTitle" hidden>
+    <div class="drawer__scrim"></div>
+    <div class="drawer__panel">
+      <header class="drawer__head">
+        <div><h2 id="shipmentDrawerTitle"></h2><p id="shipmentDrawerSubtitle"></p><div class="drawer__pills" id="shipmentDrawerPills"></div></div>
+        <button class="icon-btn" id="shipmentDrawerClose" aria-label="Close shipment details"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </header>
+      <div class="drawer__body" id="shipmentDrawerBody"></div>
+      <footer class="drawer__foot" id="shipmentDrawerFoot"></footer>
+    </div>
+  </div>
+
+  <div class="drawer" id="trackingDrawer" role="dialog" aria-modal="true" aria-labelledby="trackingDrawerTitle" hidden>
+    <div class="drawer__scrim"></div>
+    <div class="drawer__panel">
+      <header class="drawer__head">
+        <div><h2 id="trackingDrawerTitle"></h2><p id="trackingDrawerSubtitle"></p><div class="drawer__pills" id="trackingDrawerPills"></div></div>
+        <button class="icon-btn" id="trackingDrawerClose" aria-label="Close tracking details"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </header>
+      <div class="drawer__body" id="trackingDrawerBody"></div>
+      <footer class="drawer__foot" id="trackingDrawerFoot"></footer>
+    </div>
+  </div>
+
+  <div class="shipment-modal" id="shipmentCreateModal" role="dialog" aria-modal="true" aria-labelledby="shipmentCreateTitle" hidden>
+    <div class="shipment-modal__scrim" data-create-close></div>
+    <div class="shipment-modal__box a-glass">
+      <header class="shipment-modal__head"><div><span class="a-demo-badge">Demo creation</span><h2 id="shipmentCreateTitle">Create shipment</h2><p>Confirm the approved order details and expected delivery date.</p></div><button class="icon-btn" type="button" data-create-close aria-label="Close create shipment dialog"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></header>
+      <div id="shipmentCreateSummary"></div>
+      <div class="shipment-form__field"><label for="shipmentCreateExpected">Expected delivery date</label><input class="a-input shipment-date" id="shipmentCreateExpected" type="date" /></div>
+      <p class="shipment-modal__notice">Tracking numbers are generated for this preview only. New records are not saved after refresh.</p>
+      <div class="a-modal__actions"><button type="button" class="a-btn a-btn--ghost" data-create-close>Cancel</button><button type="button" class="a-btn a-btn--gold" id="shipmentCreateConfirm">Create shipment</button></div>
+    </div>
+  </div>
+
+  <div class="a-modal" id="confirmModal" role="alertdialog" aria-modal="true" aria-labelledby="cTitle" aria-describedby="cMsg" hidden>
+    <div class="a-modal__box a-glass">
+      <h2 id="cTitle"></h2>
+      <p id="cRef" style="color:var(--a-gold);font-weight:700;margin-bottom:8px"></p>
+      <p id="cMsg"></p>
+      <div class="a-field" id="cNoteWrap" hidden>
+        <label for="cNote">Reason / note</label>
+        <textarea class="a-textarea" id="cNote" maxlength="500" placeholder="e.g. Receiver phone number is missing"></textarea>
+        <p class="a-error">Please enter a reason (at least 5 characters).</p>
+      </div>
+      <p style="font-size:12px;color:var(--a-info);margin-bottom:14px">Preview only. This change won't be saved.</p>
+      <div class="a-modal__actions">
+        <button type="button" class="a-btn a-btn--ghost" id="cCancel">Go back</button>
+        <button type="button" class="a-btn" id="cOk"></button>
+      </div>
+    </div>
+  </div>
+  <div class="a-toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
