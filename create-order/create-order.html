@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Order | Ojaybest Logistics</title>
+  <meta name="theme-color" content="#021d46">
+  <link rel="icon" href="../assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="create-order.css">
+  <script src="create-order.js" defer></script>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true">
+  <span class="orb orb--gold"></span>
+  <span class="orb orb--blue"></span>
+  <span class="orb orb--sky"></span>
+  <span class="grid-lines"></span>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav glass" aria-label="Main navigation">
+    <a href="../index.html" class="nav__brand" aria-label="Ojaybest Logistics home">
+      <img src="../assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="134" height="40" />
+    </a>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="../index.html" class="nav__link">Home</a></li>
+      <li><a href="../about.html" class="nav__link">About Us</a></li>
+      <li><a href="../contact.html" class="nav__link">Contact Us</a></li>
+      <li><a href="../track-order.html" class="nav__link">Track Order</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a href="create-order.html" class="btn btn--gold btn--sm nav__cta">Create Order</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu glass" id="mobileMenu" hidden>
+    <a href="../index.html" class="mobile-menu__link">Home</a>
+    <a href="../about.html" class="mobile-menu__link">About Us</a>
+    <a href="../contact.html" class="mobile-menu__link">Contact Us</a>
+    <a href="../track-order.html" class="mobile-menu__link">Track Order</a>
+    <a href="create-order.html" class="btn btn--gold btn--sm mobile-menu__cta">Create Order</a>
+  </div>
+</header>
+
+<main class="order-shell">
+
+  <div class="intro">
+    <p class="intro-badge">Create Order</p>
+    <h1>Create your <span>order.</span></h1>
+    <p>From your doorstep to their destination. Tell us what you’re sending and we’ll take it from there.</p>
+  </div>
+
+  <div class="order-layout">
+    <aside class="journey">
+      <p class="eyebrow">YOUR SHIPMENT, STEP BY STEP</p>
+
+      <ol id="stepList">
+        <li>
+          <span class="step-number">1</span>
+          <div>Service &amp; route<small>Choose your service</small></div>
+        </li>
+        <li>
+          <span class="step-number">2</span>
+          <div>Sender details<small>Your contact information</small></div>
+        </li>
+        <li>
+          <span class="step-number">3</span>
+          <div>Recipient details<small>Delivery contact</small></div>
+        </li>
+        <li>
+          <span class="step-number">4</span>
+          <div>Shipment details<small>What you’re sending</small></div>
+        </li>
+        <li>
+          <span class="step-number">5</span>
+          <div>Pickup details<small>Arrange handover</small></div>
+        </li>
+        <li>
+          <span class="step-number">6</span>
+          <div>Review your order<small>Check all the details</small></div>
+        </li>
+      </ol>
+
+      <div class="help">
+        <strong>A little help along the way?</strong>
+        <p>Our team can help with your shipment details.</p>
+        <a href="../contact.html">Contact us</a>
+      </div>
+    </aside>
+
+    <section class="form-card">
+      <div class="progress-top">
+        <span id="stepCount" aria-live="polite">Step 1 of 6</span>
+        <span>ORDER DETAILS</span>
+      </div>
+
+      <div class="progress-track" role="progressbar" aria-label="Form progress" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+        <div id="progressFill"></div>
+      </div>
+
+      <form id="orderForm" novalidate>
+
+        <section class="step" data-title="Service &amp; route">
+          <h2 tabindex="-1">Service &amp; route</h2>
+          <p class="step-description">Tell us where your shipment is going.</p>
+          <div class="grid">
+            <label class="field">
+              <span>Service type <b>*</b></span>
+              <span class="select-wrap">
+                <select name="service" required>
+                  <option value="">Select an option</option>
+                  <option>International shipping</option>
+                  <option>Domestic delivery</option>
+                  <option>Freight forwarding</option>
+                </select>
+              </span>
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Pickup country <b>*</b></span>
+              <input name="originCountry" type="text" required autocomplete="country-name">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Pickup city <b>*</b></span>
+              <input name="originCity" type="text" required>
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Destination country <b>*</b></span>
+              <input name="destinationCountry" type="text" required>
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Destination city <b>*</b></span>
+              <input name="destinationCity" type="text" required>
+              <small class="error"></small>
+            </label>
+          </div>
+        </section>
+
+        <section class="step" data-title="Sender details" hidden>
+          <h2 tabindex="-1">Sender details</h2>
+          <p class="step-description">Who are we collecting the shipment from?</p>
+          <div class="grid">
+            <label class="field">
+              <span>Full name <b>*</b></span>
+              <input name="senderName" type="text" required autocomplete="name" maxlength="120">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Email address <b>*</b></span>
+              <input name="senderEmail" type="email" required autocomplete="email">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Phone number <b>*</b></span>
+              <input name="senderPhone" type="tel" required autocomplete="tel" placeholder="Include country code" minlength="7">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Street address <b>*</b></span>
+              <input name="senderAddress" type="text" required autocomplete="street-address" maxlength="250">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>State / region <b>*</b></span>
+              <input name="senderState" type="text" required>
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Postal code (optional)</span>
+              <input name="senderPostal" type="text">
+              <small class="error"></small>
+            </label>
+          </div>
+        </section>
+
+        <section class="step" data-title="Recipient details" hidden>
+          <h2 tabindex="-1">Recipient details</h2>
+          <p class="step-description">Who will receive your shipment?</p>
+          <div class="grid">
+            <label class="field">
+              <span>Full name <b>*</b></span>
+              <input name="recipientName" type="text" required autocomplete="name" maxlength="120">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Email address (optional)</span>
+              <input name="recipientEmail" type="email" autocomplete="email">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Phone number <b>*</b></span>
+              <input name="recipientPhone" type="tel" required autocomplete="tel" placeholder="Include country code" minlength="7">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Street address <b>*</b></span>
+              <input name="recipientAddress" type="text" required autocomplete="street-address" maxlength="250">
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>State / region <b>*</b></span>
+              <input name="recipientState" type="text" required>
+              <small class="error"></small>
+            </label>
+            <label class="field">
+              <span>Postal code (optional)</span>
+              <input name="recipientPostal" type="text">
+              <small class="error"></small>
+            </label>
+          </div>
+        </section>
+
+        <section class="step" data-title="Shipment details" hidden>
+          <h2 tabindex="-1">Shipment details</h2>
+          <p class="step-description">Add the details for each package.</p>
+          <div class="grid">
+            <div id="packages" class="wide"></div>
+            <button type="button" class="secondary wide add" id="addPackage">+ Add another package</button>
+            <label class="field">
+              <span>Declared value currency <b>*</b></span>
+              <span class="select-wrap">
+                <select name="currency" required>
+                  <option value="">Select an option</option>
+                  <option>NGN</option>
+                  <option>USD</option>
+                  <option>GBP</option>
+                  <option>EUR</option>
+                </select>
+              </span>
+              <small class="error"></small>
+            </label>
+            <label class="field wide">
+              <span>Special instructions (optional)</span>
+              <textarea name="instructions" rows="3" maxlength="1000"></textarea>
+              <small class="error"></small>
+            </label>
+          </div>
+        </section>
+
+        <section class="step" data-title="Pickup details" hidden>
+          <h2 tabindex="-1">Pickup details</h2>
+          <p class="step-description">Choose how your shipment reaches us.</p>
+          <div class="grid">
+            <label class="field">
+              <span>Collection preference <b>*</b></span>
+              <span class="select-wrap">
+                <select name="collection" required>
+                  <option value="">Select an option</option>
+                  <option>Pickup</option>
+                  <option>Drop-off</option>
+                </select>
+              </span>
+              <small class="error"></small>
+            </label>
+            <div id="pickupFields" class="wide grid" hidden>
+              <label class="field">
+                <span>Preferred pickup date <b>*</b></span>
+                <input name="pickupDate" type="date" required>
+                <small class="error"></small>
+              </label>
+              <label class="field">
+                <span>Collection instructions (optional)</span>
+                <input name="pickupNotes" type="text">
+                <small class="error"></small>
+              </label>
+            </div>
+            <p id="collectionNote" class="hint wide">Select how you would like to hand over your shipment. Availability will be confirmed by our team.</p>
+          </div>
+        </section>
+
+        <section class="step" data-title="Review your order" hidden>
+          <h2 tabindex="-1">Review your order</h2>
+          <p class="step-description">Check your details before submitting.</p>
+          <div class="grid">
+            <div id="review" class="wide"></div>
+            <label class="consent wide">
+              <input type="checkbox" name="terms" required>
+              <span>I agree to the <a href="../terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and have read the <a href="../privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+            </label>
+            <p class="hint wide">Pricing will be confirmed after your shipment details are reviewed. This form is a preview: online submission is not connected yet.</p>
+          </div>
+        </section>
+
+        <p id="formMessage" role="status"></p>
+
+        <div class="form-actions">
+          <button type="button" class="secondary" id="back">Back</button>
+          <span class="required-note">* Required fields</span>
+          <button type="submit" class="primary" id="next">Continue</button>
+        </div>
+      </form>
+
+      <noscript>Please enable JavaScript to use the step-by-step order form.</noscript>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top glass">
+      <div class="footer__brand">
+        <img src="../assets/ojaybest-logo.png" alt="Ojaybest Logistics" width="160" height="48" loading="lazy" />
+        <p>World-class logistics for local businesses. Shipping, freight forwarding, warehousing and last-mile delivery you can trust.</p>
+        <div class="socials">
+          <a href="#" class="round-btn round-btn--sm glass" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="round-btn round-btn--sm glass" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5"/></svg></a>
+          <a href="#" class="round-btn round-btn--sm glass" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+          <a href="#" class="round-btn round-btn--sm glass" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About Us</a>
+        <a href="../contact.html">Contact Us</a>
+        <a href="../faq.html">FAQ</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <a href="../create-order/create-order.html">Create Order</a>
+        <a href="../track-order.html">Track Order</a>
+        <a href="../index.html#services">Freight Forwarding</a>
+        <a href="../index.html#services">Warehousing</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms &amp; Conditions</a>
+      </div>
+
+      <div class="footer__col footer__contact">
+        <h4>Get in touch</h4>
+        <p><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> +234 800 000 0000</p>
+        <p><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> hello@ojaybestlogistics.com</p>
+        <p><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Port Harcourt, Nigeria</p>
+
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <label for="newsletterEmail" class="sr-only">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="Your email for updates" />
+          <button type="submit" class="btn btn--gold btn--sm">Subscribe</button>
+        </form>
+        <p class="newsletter__msg" id="newsletterMsg" role="status"></p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Ojaybest Logistics. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
