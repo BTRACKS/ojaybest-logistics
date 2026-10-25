@@ -581,3 +581,17 @@
   .tracking-action { width: 100%; grid-column: 1 / -1; justify-content: center; }
   .tracking-field { grid-template-columns: 1fr; }
 }
+
+/* ---------- Shared tracking results (same design as homepage) ---------- */
+.tracking-demo-flag { margin-bottom: 14px; }
+.tracking-results-wrap .track__result { max-width: 640px; }
+.tracking-result-note {
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 16px;
+  color: #a9bdd4;
+}
+.tracking-result-note strong { color: #fff; }
+
+/* Keep results clear of the fixed header when scrolled into view */
+.tracking-results-wrap { scroll-margin-top: 110px; }

@@ -1,7 +1,10 @@
 /* ============================================================
    Track Order page: shipment tracking logic.
-   Frontend-only preview: sample data is clearly marked as a
-   demonstration until Supabase integration replaces lookup().
+   Frontend-only preview: results are rendered by the shared
+   renderer (assets/tracking-shared.js) so they look and behave
+   exactly like the homepage tracker, and every result is
+   clearly labelled as demonstration data until Supabase
+   integration replaces the lookup.
    ============================================================ */
 (() => {
   'use strict';
@@ -16,6 +19,8 @@
   const resultsEl = document.getElementById('trackingResults');
   const demoBtn = document.getElementById('demoButton');
   const PREFIX = prefixEl.textContent;
+  const shared = window.OjaybestTracking;
+  const DEMO_CODE = 'OJBTR19K2M';
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   /* ---------- shared helpers ---------- */
@@ -66,62 +71,20 @@
       </div>`);
   }
 
-  function renderNotFound(code) {
+  /* Shared results: identical timeline design to the homepage tracker,
+     wrapped in a clear demonstration notice (frontend-only preview). */
+  function renderShipment(code) {
+    const shipment = shared.shipmentFor(code);
     showResults(`
-      <div class="tracking-card tracking-empty">
-        <span class="tracking-empty-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8.5 11h5"/></svg>
-        </span>
-        <h3>Shipment not found</h3>
-        <p>We couldn't find a shipment for tracking number <strong>${esc(PREFIX + code)}</strong>. Please check the characters and try again.</p>
-        <ul class="tracking-empty-suggest">
-          <li>Make sure you entered the last four characters exactly as they appear on your confirmation.</li>
-          <li>Tracking numbers become active shortly after your shipment is registered.</li>
-          <li>Still stuck? Our team can look it up for you. See the Contact Us link below.</li>
-        </ul>
-        <p class="result-note"><strong>Website preview:</strong> live shipment lookup is enabled after Supabase integration, so valid numbers cannot be retrieved yet.</p>
-      </div>`);
+      <div class="tracking-demo-flag">
+        <span class="result-tag">DEMONSTRATION DATA: NOT A REAL SHIPMENT</span>
+      </div>
+      <div class="track__result">${shared.timelineHTML(shipment)}</div>
+      <p class="result-note tracking-result-note"><strong>Website preview.</strong> This is sample information generated for demonstration only and does not correspond to a real shipment. Live shipment lookup will be enabled after Supabase integration.</p>
+    `);
   }
 
-  function renderDemo() {
-    const code = 'OJBTR19K2M';
-    const events = [
-      ['Package received', 'Shipment accepted at our Lagos facility.', '21 Oct 2026', 'done'],
-      ['In transit', 'Shipment is on its way to the destination.', '23 Oct 2026', 'current'],
-      ['Customs clearance', 'Awaiting clearance at destination.', 'Pending', 'future'],
-      ['Out for delivery', 'Awaiting dispatch to the recipient.', 'Pending', 'future'],
-      ['Delivered', 'Final delivery confirmation.', 'Pending', 'future'],
-    ];
-    const timeline = events.map(([name, desc, date, state]) => `
-      <div class="result-event${state === 'future' ? ' future' : ''}${state === 'current' ? ' is-current' : ''}">
-        <span class="result-dot" aria-hidden="true"></span>
-        <div>
-          <strong>${esc(name)}</strong><span class="result-state">${state === 'done' ? 'Completed' : state === 'current' ? 'In progress' : 'Pending'}</span>
-          <p>${esc(desc)}</p>
-          <small>${esc(date)}</small>
-        </div>
-      </div>`).join('');
-
-    showResults(`
-      <div class="tracking-card">
-        <div class="result-header">
-          <span class="result-tag">DEMONSTRATION DATA: NOT A REAL SHIPMENT</span>
-          <span class="result-status">In Transit</span>
-        </div>
-        <p class="result-number"><small>Tracking number</small><strong>${esc(code)}</strong></p>
-        <p class="result-sub">Air freight shipment from Lagos, Nigeria to London, United Kingdom.</p>
-        <div class="result-grid">
-          <div class="result-field"><small>Origin</small><strong>Lagos, Nigeria</strong></div>
-          <div class="result-field"><small>Destination</small><strong>London, UK</strong></div>
-          <div class="result-field"><small>Service</small><strong>Air Freight</strong></div>
-          <div class="result-field"><small>Last updated</small><strong>23 Oct 2026</strong></div>
-        </div>
-        <div class="result-timeline"><h4>Shipment progress</h4>${timeline}</div>
-        <p class="result-note"><strong>Preview only.</strong> This is sample information and does not correspond to a real shipment.</p>
-      </div>`);
-  }
-
-  /* ---------- form submit: validate → loading → not found ---------- */
+  /* ---------- form submit: validate → loading → shared results ---------- */
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     clearError();
@@ -137,12 +100,12 @@
     }
     renderLoading(value);
     setTimeout(() => {
-      renderNotFound(value);
+      renderShipment(PREFIX + value);
     }, 900);
   });
 
   demoBtn.addEventListener('click', () => {
     clearError();
-    renderDemo();
+    renderShipment(DEMO_CODE);
   });
 })();

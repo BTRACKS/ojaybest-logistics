@@ -79,13 +79,12 @@
     toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 3200);
   };
 
-  /* ---------- Shipment tracker (preview data) ---------- */
-  const CITIES = ["Lagos", "Abuja", "Port Harcourt", "Ibadan", "Kano", "Enugu", "Benin City", "Kaduna"];
-  const STAGES = ["Order created", "Picked up", "At sorting hub", "In transit", "Out for delivery", "Delivered"];
+  /* ---------- Shipment tracker (preview data) ----------
+     Rendering is delegated to assets/tracking-shared.js so the
+     homepage and the Track Order page stay identical. */
   const TRACK_PREFIX = "OJBTR";           // fixed part, never typed by the user
   const SUFFIX_LENGTH = 5;                // users type only the last 5 characters
   const SUFFIX_PATTERN = /^[A-Z0-9]{5}$/;
-
 
   const normalise = (v) => v.trim().toUpperCase().replace(/\s+/g, "");
 
@@ -108,52 +107,9 @@
     });
   };
 
-  const hash = (str) => [...str].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7);
-
-  const fmtTime = (date) =>
-    date.toLocaleDateString("en-GB", { day: "numeric", month: "short" }) + ", " +
-    date.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
-
-  const checkIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
-
   const renderShipment = (code) => {
-    const h = hash(code);
-    const from = CITIES[h % CITIES.length];
-    let to = CITIES[(h >>> 3) % CITIES.length];
-    if (to === from) to = CITIES[(CITIES.indexOf(from) + 1) % CITIES.length];
-    const current = 1 + (h % (STAGES.length - 1)); // 1..5
-    const now = new Date();
-    const eta = new Date(now.getTime() + (STAGES.length - 1 - current) * 8 * 3600 * 1000);
-
-    const steps = STAGES.map((title, i) => {
-      const finished = current === STAGES.length - 1;
-      const done = i < current || (finished && i === current);
-      const state = done ? "is-done" : i === current ? "is-current" : "";
-      const time = i <= current ? fmtTime(new Date(now.getTime() - (current - i) * 6 * 3600 * 1000)) : "Pending";
-      const marker = done ? checkIcon : "";
-      return `
-        <li class="timeline__step ${state}" style="animation-delay:${i * 80}ms">
-          <span class="timeline__marker">${marker}</span>
-          <div>
-            <p class="timeline__title">${title}</p>
-            <p class="timeline__time">${time}</p>
-          </div>
-        </li>`;
-    }).join("");
-
-    const delivered = current === STAGES.length - 1;
-    $("#trackResult").innerHTML = `
-      <div class="timeline__head">
-        <div>
-          <p class="timeline__code">${code}</p>
-          <p class="timeline__route">${from} &rarr; ${to}</p>
-        </div>
-        <div class="timeline__eta">
-          ${delivered ? "Delivered" : "Estimated delivery"}
-          <strong>${delivered ? fmtTime(now) : eta.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}</strong>
-        </div>
-      </div>
-      <ol class="timeline">${steps}</ol>`;
+    $("#trackResult").innerHTML =
+      window.OjaybestTracking.timelineHTML(window.OjaybestTracking.shipmentFor(code));
   };
 
   const validate = (value, errorEl) => {
@@ -167,33 +123,17 @@
     return TRACK_PREFIX + suffix;
   };
 
-
   const trackForm = $("#trackForm");
   const trackInput = $("#trackInput");
   const trackError = $("#trackError");
-  const quickForm = $("#quickTrackForm");
-  const quickInput = $("#quickTrackInput");
-  const quickError = $("#quickTrackError");
 
-  [trackInput, quickInput].forEach(bindSuffixInput);
+  bindSuffixInput(trackInput);
 
   trackForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const code = validate(trackInput.value, trackError);
     if (code) renderShipment(code);
   });
-
-  // Hero quick tracker scrolls to the main tracker and shows the result
-  quickForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const code = validate(quickInput.value, quickError);
-    if (!code) return;
-    trackInput.value = code.slice(TRACK_PREFIX.length);
-    trackError.textContent = "";
-    renderShipment(code);
-    $("#track").scrollIntoView({ behavior: "smooth", block: "center" });
-  });
-
 
   /* ---------- Reviews slider ---------- */
   const reviewsTrack = $("#reviewsTrack");
